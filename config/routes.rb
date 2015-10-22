@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/login'
+
   get 'advisor/advise'
 
   get 'student/me'
