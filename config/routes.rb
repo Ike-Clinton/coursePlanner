@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'advisor/advise'
+
+  get 'student/me'
+
+  get 'register/new'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
