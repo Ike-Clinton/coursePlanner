@@ -32,8 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+
+  gem 'jasmine-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
@@ -44,6 +44,19 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  
+  gem 'rspec-rails', '2.14'
+  gem 'simplecov', :require => false
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels' # basic imperative step defs
+  gem 'database_cleaner' # required by Cucumber
+  gem 'autotest-rails'
+  gem 'factory_girl_rails' # if using FactoryGirl
+  gem 'metric_fu'        # collect code metrics
+  
 end
 
 group :production do
