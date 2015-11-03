@@ -1,1 +1,34 @@
-Hello World Login
+!!!
+%html
+  %head
+    %title My Sinatra Website
+    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
+    %link(rel="stylesheet" href="css/styles.css")
+  %body
+    #wrapper
+      #header
+        %h1 Course Planner
+        %h2 Returning users please login
+      #nav
+        %ol
+          %a(href="/")
+            %li Home
+          %a(href="register")
+            %li Register
+          %a(href="login")
+            %li Login
+      #content
+        %form
+          = label :user, :email, "Email"
+          = text_field :user, :email
+          = label :user, :password
+          = password_field :user, :password
+          %input{:type => "submit", :value => "Sign in"}
+      #side_bar
+        %h1 Side Bar
+        %p
+          This is the side bar of the webpage
+ 
+      #footer
+        %p
+          ©Citadel 1337 Squad
