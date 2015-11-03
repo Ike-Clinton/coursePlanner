@@ -13,8 +13,11 @@ module NavigationHelpers
     when /Course Planner welcome page/
       '/'
     
-    when /Course Planner Home page/
-      '/student/me'
+    when /Course Planner Register page/
+      '/register/new'
+      
+     when /Course Planner Login page/
+      '/sessions/login'
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
