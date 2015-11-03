@@ -327,7 +327,9 @@ PLATFORMS
 
 DEPENDENCIES
   autotest-rails
+  capybara
   coffee-rails (~> 4.1.0)
+  cucumber
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
