@@ -7,6 +7,7 @@ Rails.application.routes.draw do
    root 'courses#index'
    get 'register' => 'courses#register'
    get 'login' => 'courses#login'
+   get 'main' => 'courses#main'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
