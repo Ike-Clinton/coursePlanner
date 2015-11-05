@@ -4,11 +4,16 @@ class CoursesController < ApplicationController
       
   end
   
+  def create
+    @user = User.new()
+  end
+  
   def register
-
+    
   end
   
   def login
-      
+
   end
+  
 end
