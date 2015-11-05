@@ -20,6 +20,11 @@
           %a(href="main")
             %li Main
       #content
+        %form
+          = label :user, :email, "Email"
+          = text_field :user, :email
+          %input{:type => "submit", :value => "Sign in"}
+      
         %h1 The Register Page
         %p
           Register for some classes Yo
