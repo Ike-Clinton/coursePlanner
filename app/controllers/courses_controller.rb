@@ -5,7 +5,11 @@ class CoursesController < ApplicationController
   end
   
   def create
-    @user = User.new()
+    email = :email
+    name = :name
+    academic_class = :academic_class
+    @user = User.new(email: email, name: name, academic_class: academic_class)
+    @user.save
   end
   
   def register
