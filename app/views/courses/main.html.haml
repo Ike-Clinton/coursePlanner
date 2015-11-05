@@ -1,1 +1,36 @@
-Welcome @user.name
+!!!
+%html
+  %head
+    %title My Sinatra Website
+    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
+    %link(rel="stylesheet" href="css/styles.css")
+  %body
+    #wrapper
+      #header
+        %h1 Course Planner
+        %h2 Main Page
+      #nav
+        %ol
+          %a(href="/")
+            %li Home
+          %a(href="register")
+            %li Register
+          %a(href="login")
+            %li Login
+          %a(href="main")
+            %li Main
+      #content
+        %h1 The Register Page
+        %p
+          Register for some classes Yo
+        %p
+          This is the register page and this is some text to fill out the register page!
+ 
+      #side_bar
+        %h1 Side Bar
+        %p
+          This is the side bar of the webpage
+ 
+      #footer
+        %p
+          ©Citadel 1337 Squad

@@ -5,15 +5,20 @@ class CoursesController < ApplicationController
   end
   
   def create
+    # Grab the parameters from the view
     email = :email
     name = :name
     academic_class = :academic_class
+    # Create then save a new active record entry
     @user = User.new(email: email, name: name, academic_class: academic_class)
     @user.save
+    # TODO: Create a DB entry for User_data 
+    # This will be their classes taken, etc
+    
   end
   
   def register
-    
+    # I don't think we need any controller code here but I kept this action just in case
   end
   
   def login

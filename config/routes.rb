@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'courses#index'
-   get 'register' => 'courses#register'
+   get 'register' => 'courses#register'\
+   # When the click submit on the new user registration page
    post 'register' => 'courses#create'
    get 'login' => 'courses#login'
    get 'main' => 'courses#main'
