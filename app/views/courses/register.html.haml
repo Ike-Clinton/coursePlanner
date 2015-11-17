@@ -2,15 +2,17 @@
 %p
 Register for some classes Yo
 %p
-This is the register page and this is some text to fill out the register page!
+This is the register page.
 #content
 
- 
-  #side_bar
-  %h1 Side Bar
-  %p
-  This is the side bar of the webpage
- 
-  #footer
-  %p
-  ©Citadel 1337 Squad
+.form
+  = form_for(:user, url: "/register") do |f|
+    = f.label :email
+    = f.email_field :email, class: 'form-control'
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+    = f.label :academic_class
+    = f.text_field :academic_class, class: 'form-control'
+    = f.label :is_advisor
+    = f.text_field :is_advisor, class: 'form-control'
+    = f.submit "Submit", class: "btn btn-primary"
