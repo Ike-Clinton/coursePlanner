@@ -17,12 +17,6 @@ class CoursesController < ApplicationController
   
   def submit_register
      # Grab the parameters from the view
-    
-    email = :email
-    name = :name
-    academic_class = :academic_class
-    is_advisor = :is_advisor
-    
     if User.find_by email: params[:email]
       flash[:warning] = "User already exists!"
       redirect_to "/register" and return
