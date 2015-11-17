@@ -20,7 +20,13 @@ class CoursesController < ApplicationController
   end
   
   def submit_register
-    # I don't think we need any controller code here but I kept this action just in case
+     # Grab the parameters from the view
+    email = :email
+    name = :name
+    academic_class = :academic_class
+    is_advisor = :is_advisor
+    # Create then save a new active record entry
+    @user = User.create!(courses_params)
     redirect_to "/student"
   end
   
@@ -38,7 +44,8 @@ class CoursesController < ApplicationController
           redirect_to "/student"  
         end
     else
-      flash.now[:danger] = 'User does not exist!'
+      flash[:warning] = 'User does not exist!'
+      redirect_to "/login"
     end
       
       

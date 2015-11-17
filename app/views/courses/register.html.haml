@@ -27,9 +27,14 @@
         #content
         = form_tag '/register' do
           = field_set_tag do
+            = label_tag 'email', 'Email'
             = text_field_tag :email
+            = label_tag 'name', 'Name'
             = text_field_tag :name
+            = label_tag 'academic_class', 'Academic Class'
             = text_field_tag :academic_class
+            = label_tag 'is_advisor', 'Advisor?'
+            = text_field_tag :is_advisor
             = submit_tag 'Submit'
  
       #side_bar

@@ -5,19 +5,41 @@ describe CoursesController do
   describe "#submit_login" do
     context "When a student provides his email" do
       it "should log that student in and redirect to his profile" do
-      
+        @student_id = '1234'
+        @student_email = 'iclinton@citadel.edu'
+        @user = double('fake_user', :email => 'iclinton@citadel.edu')
+        
+        expect(User).to receive(:find_by).with(@student_email).and_return(@user)
+        
+        get :student, :id => @student_id
+        expect(response).to render_template(:student)
+        
       end
     end
     
     context "When an advisor provides his email" do
       it "should log that advisor in and redirect to the advisor view" do
-      
+        @advisor_id = '5678'
+        @advisor_email = 'mv@citadel.edu'
+        @user = double('fake_user', :email => 'mv@citadel.edu')
+        
+        expect(User).to receive(:find_by).with(@advisor_email).and_return(@user)
+        
+        get :advisor, :id => @advisor_id
+        expect(response).to render_template(:advisor)
       end
     end
     
     context "When a specified user provides his email but has no account registered" do
       it "should redirect back to login screen, and tell him the account doesn't exist" do
-      
+       @student_id = '0000'
+        @student_email = 'notreal@citadel.edu'
+        @user = double('fake_user', :email => 'notreal@citadel.edu').as_null_object
+        
+        expect(User).to receive(:find_by).with(@student_email).and_return(nil)
+        
+        get :student, :id => @student_id
+        expect(response).to render_template(:student)
       end
     end
   end
