@@ -5,5 +5,5 @@ Feature: Navigating to the login page
   
 Scenario: Navigating to the login page
   Given I am on the Course Planner Welcome page
-	When I press Login
+	When I follow Login
 	Then I should be on the Course Planner Login page
