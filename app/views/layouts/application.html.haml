@@ -14,14 +14,12 @@
         %h2 Main Page
       #nav
         %ol
-          %a(href="/")
+          %a(href="/index")
             %li Home
           %a(href="register")
             %li Register
           %a(href="login")
             %li Login
-          %a(href="main")
-            %li Main
         #main
         - if flash[:notice]
           #notice.message= flash[:notice]

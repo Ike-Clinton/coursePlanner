@@ -22,9 +22,21 @@ class CoursesController < ApplicationController
     name = :name
     academic_class = :academic_class
     is_advisor = :is_advisor
-    # Create then save a new active record entry
+    
+    if User.find_by email: params[:email]
+      flash[:warning] = "User already exists!"
+      redirect_to "/register" and return
+    end
+    
     @user = User.create!(courses_params)
-    redirect_to "/student"
+    if @user
+        if @user.is_advisor == "true"
+          redirect_to "/advisor" and return
+        else
+          redirect_to "/student" and return
+        end
+    end
+    redirect_to "/student" and return
   end
   
   def register
