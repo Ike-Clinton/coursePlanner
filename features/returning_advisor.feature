@@ -6,8 +6,8 @@ Feature: Logging in as a returning advisor
   Background: The user mv@citadel.edu has already registered
     
   Given the following user exists
-  | email                   | name | academic_class |
-  | mv@citadel.edu          | Mike | 1a             |
+  | email                   | name | academic_class | is_advisor |
+  | mv@citadel.edu          | Mike | 1a             | true        |
 
 Scenario: Logging in as an advisor
   Given I am on the Course Planner Login page

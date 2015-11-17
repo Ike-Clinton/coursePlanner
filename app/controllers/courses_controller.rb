@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
     
   def courses_params
-    params.require(:user).permit(:email, :name, :academic_class)
+    params.require(:user).permit(:email, :name, :academic_class, :is_advisor)
   end  
     
   def index
@@ -32,7 +32,7 @@ class CoursesController < ApplicationController
       user = User.find_by email: params[:email]
       # Throws error if the email entered does not exists
       if user
-        if user.email == "mv@citadel.edu"
+        if user.is_advisor == "true"
           redirect_to "/advisor"
         else
           redirect_to "/student"  

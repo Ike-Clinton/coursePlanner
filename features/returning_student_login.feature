@@ -6,8 +6,8 @@ Feature: Logging in as returning student
   Background: The user iclinton@citadel.edu has already registered
     
   Given the following user exists
-  | email                   | name | academic_class |
-  | iclinton@citadel.edu    | Ike  | 1a             |
+  | email                   | name | academic_class | is_advisor |
+  | iclinton@citadel.edu    | Ike  | 1a             | false        |
 	
 Scenario: Logging in as a returning student
     Given I am on the Course Planner Login page
