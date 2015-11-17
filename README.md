@@ -24,6 +24,5 @@ Review Gemfile and Gemfile.lock for other dependencies and required Gems
 * Database initialization
 
 * How to run the test suite
-
-  BDD Testing is done with the command 'cucumber'
-  Rspec may be invoked with 'rspec -fd'
+  Run cucumber with <pre>cucumber</pre>
+  Run rspec tests with <pre>rspec -fd</pre>
