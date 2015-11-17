@@ -25,17 +25,17 @@
         %p
           This is the register page and this is some text to fill out the register page!
         #content
-        = form_tag '/register' do
-          = field_set_tag do
-            = label_tag 'email', 'Email'
-            = text_field_tag :email
-            = label_tag 'name', 'Name'
-            = text_field_tag :name
-            = label_tag 'academic_class', 'Academic Class'
-            = text_field_tag :academic_class
-            = label_tag 'is_advisor', 'Advisor?'
-            = text_field_tag :is_advisor
-            = submit_tag 'Submit'
+        .form
+          = form_for(:user, url: "/register") do |f|
+            = f.label :email
+            = f.email_field :email, class: 'form-control'
+            = f.label :name
+            = f.text_field :name, class: 'form-control'
+            = f.label :academic_class
+            = f.text_field :academic_class, class: 'form-control'
+            = f.label :is_advisor
+            = f.text_field :is_advisor, class: 'form-control'
+            = f.submit "Submit", class: "btn btn-primary"
  
       #side_bar
         %h1 Side Bar

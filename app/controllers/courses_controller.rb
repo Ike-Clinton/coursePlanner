@@ -9,18 +9,15 @@ class CoursesController < ApplicationController
   end
   
   def create
-    # Grab the parameters from the view
-    email = :email
-    name = :name
-    academic_class = :academic_class
-    # Create then save a new active record entry
-    @user = User.new(email: email, name: name, academic_class: academic_class)
-    @user.save
+    @user = User.create!(user_params)
+    flash[:warning] = "#{@user.email} was successfully created."
+    redirect_to "/student"
 
   end
   
   def submit_register
      # Grab the parameters from the view
+    user = :user
     email = :email
     name = :name
     academic_class = :academic_class
@@ -41,7 +38,7 @@ class CoursesController < ApplicationController
         if user.is_advisor == "true"
           redirect_to "/advisor"
         else
-          redirect_to "/student"  
+          redirect_to "/student" 
         end
     else
       flash[:warning] = 'User does not exist!'
