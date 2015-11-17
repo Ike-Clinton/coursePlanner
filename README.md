@@ -1,11 +1,17 @@
-== README
+The Citadel Course Planner
+===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Course Planner is a Rails app designed to help students plan their courses
+for the coming semester. It is currently a work in progress and functionality
+may be limited during testing. YMMV.
 
 Things you may want to cover:
 
 * Ruby version
+Built on 'ruby 2.2.2
+
+* Rails version
+Built with 'rails 4.2.1
 
 * System dependencies
 
@@ -24,5 +30,4 @@ Things you may want to cover:
 * ...
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
