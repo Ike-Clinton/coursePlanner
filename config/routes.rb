@@ -7,9 +7,9 @@ Rails.application.routes.draw do
    root 'courses#index'
    get 'register' => 'courses#register'
    # When the click submit on the new user registration page
-   post 'register' => 'courses#create'
-   get 'login' => 'courses#index'
-   post 'login' => 'courses#login'
+   post 'register' => 'courses#submit_register'
+   get 'login' => 'courses#login'
+   post 'login' => 'courses#submit_login'
    get 'main' => 'courses#main'
 
   # Example of regular route:

@@ -19,17 +19,16 @@
             %li Login
           %a(href="main")
             %li Main
-      #content
-        %form
-          = label :user, :email, "Email"
-          = text_field :user, :email
-          %input{:type => "submit", :value => "Sign in"}
-      
         %h1 The Register Page
         %p
           Register for some classes Yo
         %p
           This is the register page and this is some text to fill out the register page!
+        #content
+        = form_tag '/register' do
+          = field_set_tag do
+            = text_field_tag :title
+            = submit_tag 'Submit'
  
       #side_bar
         %h1 Side Bar

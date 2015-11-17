@@ -19,13 +19,16 @@
             %li Login
           %a(href="main")
             %li Main
+        %h1 The Login Page
+        %p
+          Login with your email below
+        %p
+          This is the login page!
       #content
-        %form
-          = label :user, :email, "Email"
-          = text_field :user, :email
-          = label :user, :password
-          = password_field :user, :password
-          %input{:type => "submit", :value => "Sign in"}
+        = form_tag '/register' do
+          = field_set_tag do
+            = text_field_tag :email
+            = submit_tag 'Submit'
       #side_bar
         %h1 Side Bar
         %p

@@ -21,11 +21,13 @@ class CoursesController < ApplicationController
     
   end
   
-  def register
+  def submit_register
     # I don't think we need any controller code here but I kept this action just in case
   end
   
-  def login
+  def register
+  
+  def submit_login
       @user = User.find_by(email: params[:session][:email].downcase)
       if user && user.authenticate(params[:session][:email])
        # Log in the user and redirect to main page
@@ -38,5 +40,11 @@ class CoursesController < ApplicationController
       end
 
   end
+  
+  def login
+    
+  end
+  
+
   
 end
