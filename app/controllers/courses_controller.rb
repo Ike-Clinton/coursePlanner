@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
     
+  #Necessary for accessing parameters in the view, etc  
   def courses_params
     params.require(:user).permit(:email, :name, :academic_class, :is_advisor)
   end  
@@ -8,29 +9,34 @@ class CoursesController < ApplicationController
       
   end
   
+  # Create CRUD operation
   def create
     @user = User.create!(user_params)
     flash[:warning] = "#{@user.email} was successfully created."
     redirect_to "/student"
-
   end
   
   def submit_register
-     # Grab the parameters from the view
+     # If the user already exists, inform the user and return
     if User.find_by email: params[:email]
       flash[:warning] = "User already exists!"
       redirect_to "/register" and return
     end
     
+    # Otherwise, create the user in the DB
     @user = User.create!(courses_params)
     if @user
+        # Currently, a user can just declare they are an advisor
+        # TODO: Add trusted advisor list to prevent students from
+        # escalating privs
         if @user.is_advisor == "true"
           redirect_to "/advisor" and return
         else
           redirect_to "/student" and return
         end
     end
-    redirect_to "/student" and return
+    # Shouldn't get here
+    redirect_to "/error" and return
   end
   
   def register
@@ -38,15 +44,19 @@ class CoursesController < ApplicationController
   end
   
   def submit_login
+      # Find the user by their email
+      # TODO: Add password based auth (on icebox for now)
       user = User.find_by email: params[:email]
-      # Throws error if the email entered does not exists
+      # Flash error if email does not exist and redirectes back to login
       if user
-        if user.is_advisor == "true"
+        # If the user exists, display the appropriate view based on permissions
+        if user.is_advisor == "true" 
           redirect_to "/advisor"
         else
           redirect_to "/student" 
         end
     else
+      # Error message for when user != true
       flash[:warning] = 'User does not exist!'
       redirect_to "/login"
     end
