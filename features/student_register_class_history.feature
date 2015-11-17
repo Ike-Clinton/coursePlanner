@@ -1,7 +1,7 @@
-Feature: View my course plan as a student
-  As a returning student when I have registered and logged in
-  I should be able to see my course plan based on my course history
-  So that I can see what I should take next semester
+Feature: Register my course history as a student
+  As a new student when I am registering
+  I should be able to check boxes for the classes I have taken
+  So that I can record what classes I have already taken
   
   Background: The user iclinton@citadel.edu has already registered
     
@@ -10,10 +10,10 @@ Feature: View my course plan as a student
   | iclinton@citadel.edu    | Ike  | 1a             | false      |
   
   Given the following class_history exists
-  | email                | name | crn   | class_name |
+  |email                 | name | crn   | class_name |
   | iclinton@citadel.edu | Ike  | 12345 | CSCI 201   |
 	
-Scenario: Logging in as a returning student to view my course plan
+Scenario: Registering as a new student to record classes
     Given I am on the Course Planner Login page
     When I fill in email with iclinton@citadel.edu
     And I press Submit

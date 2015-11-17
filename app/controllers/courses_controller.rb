@@ -74,6 +74,7 @@ class CoursesController < ApplicationController
   end
   
   def student
+    
   
   end
   
