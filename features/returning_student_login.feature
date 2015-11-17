@@ -10,6 +10,6 @@ Feature: Logging in as returning student
   | iclinton@citadel.edu    | Ike  | 1a             |
 	
 Scenario: Logging in as a student
-    Given I am on the Course Planner login page
+    Given I am on the Course Planner Login page
     When I enter iclinton@citadel.edu in the username box
     Then I should be on the Course Planner Login page

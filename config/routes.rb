@@ -8,7 +8,7 @@ Rails.application.routes.draw do
    get 'register' => 'courses#register'
    # When the click submit on the new user registration page
    post 'register' => 'courses#create'
-   get 'login' => 'courses#login'
+   get 'login' => 'courses#index'
    post 'login' => 'courses#login'
    get 'main' => 'courses#main'
 
