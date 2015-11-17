@@ -21,10 +21,8 @@ test: &test
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  database: db_course_planner_prod
-  pool: 5
-  timeout: 5000
+  <<: *default
+  database: db/production.sqlite3
 
 cucumber:
   <<: *test
