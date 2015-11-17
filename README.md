@@ -8,10 +8,10 @@ may be limited during testing. YMMV.
 Things you may want to cover:
 
 * Ruby version
-Built on 'ruby \'2.2.2\''
+Built on <pre>ruby '2.2.2'</pre>
 
 * Rails version
-Built with 'gem \'rails\',  \'4.2.1\''
+Built with <pre>gem 'rails',  '4.2.1'</pre>
 
 * System dependencies
 Review Gemfile and Gemfile.lock for other dependencies and required Gems
