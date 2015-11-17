@@ -1,47 +1,16 @@
-!!!
-%html
-  %head
-    %title My Sinatra Website
-    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
-    %link(rel="stylesheet" href="css/styles.css")
-  %body
-    #wrapper
-      #header
-        %h1 Course Planner
-        %h2 Register Page
-      #nav
-        %ol
-          %a(href="/")
-            %li Home
-          %a(href="register")
-            %li Register
-          %a(href="login")
-            %li Login
-          %a(href="main")
-            %li Main
-        %h1 The Register Page
-        %p
-          Register for some classes Yo
-        %p
-          This is the register page and this is some text to fill out the register page!
-        #content
-        .form
-          = form_for(:user, url: "/register") do |f|
-            = f.label :email
-            = f.email_field :email, class: 'form-control'
-            = f.label :name
-            = f.text_field :name, class: 'form-control'
-            = f.label :academic_class
-            = f.text_field :academic_class, class: 'form-control'
-            = f.label :is_advisor
-            = f.text_field :is_advisor, class: 'form-control'
-            = f.submit "Submit", class: "btn btn-primary"
+%h1 The Register Page
+%p
+Register for some classes Yo
+%p
+This is the register page and this is some text to fill out the register page!
+#content
+
  
-      #side_bar
-        %h1 Side Bar
-        %p
-          This is the side bar of the webpage
+  #side_bar
+  %h1 Side Bar
+  %p
+  This is the side bar of the webpage
  
-      #footer
-        %p
-          ©Citadel 1337 Squad
+  #footer
+  %p
+  ©Citadel 1337 Squad
