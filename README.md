@@ -14,6 +14,7 @@ Built on <pre>ruby '2.2.2'</pre>
 Built with <pre>gem 'rails',  '4.2.1'</pre>
 
 * System dependencies
+
 Review Gemfile and Gemfile.lock for other dependencies and required Gems
 
 * Configuration
@@ -23,5 +24,6 @@ Review Gemfile and Gemfile.lock for other dependencies and required Gems
 * Database initialization
 
 * How to run the test suite
+
   BDD Testing is done with the command 'cucumber'
   Rspec may be invoked with 'rspec -fd'
