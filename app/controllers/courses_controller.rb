@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
   
   def submit_register
      # Grab the parameters from the view
-    user = :user
+    
     email = :email
     name = :name
     academic_class = :academic_class
