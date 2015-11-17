@@ -8,7 +8,7 @@
     #wrapper
       #header
         %h1 Course Planner
-        %h2 Returning users please login
+        %h2 Main Page
       #nav
         %ol
           %a(href="/")
@@ -19,16 +19,13 @@
             %li Login
           %a(href="main")
             %li Main
-        %h1 The Login Page
-        %p
-          Login with your email below
-        %p
-          This is the login page!
       #content
-        = form_tag '/login' do
-          = field_set_tag do
-            = text_field_tag :email
-            = submit_tag 'Submit'
+        %h1 The Main Page
+        %p
+          Welcome user, here are the classes you have taken
+        %p
+          And these are the classes you need to take to graduate:
+ 
       #side_bar
         %h1 Side Bar
         %p

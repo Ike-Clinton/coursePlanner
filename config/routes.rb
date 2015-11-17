@@ -4,13 +4,19 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'courses#index'
+   root :to => redirect('/index')
+   # resources :users
+   
+   get 'index' => 'courses#index'
+   
    get 'register' => 'courses#register'
-   # When the click submit on the new user registration page
    post 'register' => 'courses#submit_register'
+   
    get 'login' => 'courses#login'
    post 'login' => 'courses#submit_login'
-   get 'main' => 'courses#main'
+   
+   get 'student' => 'courses#student'
+   get 'advisor' => 'courses#advisor'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

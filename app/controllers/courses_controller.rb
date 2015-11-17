@@ -16,13 +16,12 @@ class CoursesController < ApplicationController
     # Create then save a new active record entry
     @user = User.new(email: email, name: name, academic_class: academic_class)
     @user.save
-    # TODO: Create a DB entry for User_data 
-    # This will be their classes taken, etc
-    
+
   end
   
   def submit_register
     # I don't think we need any controller code here but I kept this action just in case
+    redirect_to "/student"
   end
   
   def register
@@ -30,11 +29,19 @@ class CoursesController < ApplicationController
   end
   
   def submit_login
-      @user = User.find_by(email: params[:session][:email].downcase)
-        redirect_to 
-        #Throws error if the email entered does not exists
+      user = User.find_by email: params[:email]
+      # Throws error if the email entered does not exists
+      unless user
         flash.now[:danger] = 'Invalid Email Entered'
-        render 'new'
+      end
+      
+      if user.email == "mv@citadel.edu"
+        redirect_to "/advisor"
+      else
+        redirect_to "/student"  
+      end
+      
+      
 
   end
   
@@ -42,6 +49,22 @@ class CoursesController < ApplicationController
     
   end
   
-
+  
+  # Unused
+  def new
+    
+  end
+  
+  def edit
+  
+  end
+  
+  def update
+    
+  end
+  
+  def student
+  
+  end
   
 end
