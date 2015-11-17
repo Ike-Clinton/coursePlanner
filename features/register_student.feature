@@ -5,7 +5,7 @@ Feature: Registering A New Student
 
 
 Scenario: Registering as a new student
-    Given I am on the Course Planner Login page
+  Given I am on the Course Planner Login page
 	When I follow Register
 	Then I should be on the Course Planner Register page
 

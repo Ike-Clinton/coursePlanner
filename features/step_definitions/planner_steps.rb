@@ -5,3 +5,12 @@ Given /the following user exists/ do |users_table|
      User.create!(user)
   end
 end
+
+When(/^I fill in username with mv@citadel\.edu$/) do
+  fill_in(username, :with => "mv@citadel.edu")
+end
+
+When(/^I fill in username with iclinton@citadel\.edu$/) do
+  fill_in(username, :with => "iclinton@citadel.edu")
+end
+
