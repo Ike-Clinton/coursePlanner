@@ -8,12 +8,13 @@ may be limited during testing. YMMV.
 Things you may want to cover:
 
 * Ruby version
-Built on 'ruby 2.2.2
+Built on 'ruby '2.2.2''
 
 * Rails version
-Built with 'rails 4.2.1
+Built with 'gem 'rails',  '4.2.1''
 
 * System dependencies
+Review Gemfile and Gemfile.lock for other dependencies and required Gems
 
 * Configuration
 
@@ -22,12 +23,5 @@ Built with 'rails 4.2.1
 * Database initialization
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-<tt>rake doc:app</tt>.
+  BDD Testing is done with the command 'cucumber'
+  Rspec may be invoked with 'rspec -fd'
