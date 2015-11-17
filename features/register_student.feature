@@ -3,12 +3,7 @@ Feature: Registering A New Student
   Then I should be able to fill in the classes I have taken
   So that I can plan my classes
 
-
 Scenario: Registering as a new student
-  Given I am on the Course Planner Login page
-	When I follow Register
+  Given I am on the Course Planner Welcome page
+	When I press register
 	Then I should be on the Course Planner Register page
-
-
-
-    

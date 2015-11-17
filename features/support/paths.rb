@@ -9,8 +9,7 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
-    when /Course Planner welcome page/
+    when /Course Planner Welcome page/
       '/'
     
     when /Course Planner Register page/

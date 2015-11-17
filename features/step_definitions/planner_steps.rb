@@ -6,11 +6,11 @@ Given /the following user exists/ do |users_table|
   end
 end
 
-When(/^I fill in username with mv@citadel\.edu$/) do
-  fill_in(username, :with => "mv@citadel.edu")
+When(/^I fill in email with mv@citadel\.edu$/) do
+  fill_in(email, :with => "mv@citadel.edu")
 end
 
-When(/^I fill in username with iclinton@citadel\.edu$/) do
-  fill_in(username, :with => "iclinton@citadel.edu")
+When(/^I fill in email with iclinton@citadel\.edu$/) do
+  fill_in(email, :with => "iclinton@citadel.edu")
 end
 

@@ -11,5 +11,6 @@ Feature: Logging in as returning student
 	
 Scenario: Logging in as a student
     Given I am on the Course Planner Login page
-    When I enter iclinton@citadel.edu in the username box
+    When I fill in email with iclinton@citadel.edu
+    And I follow submit
     Then I should be on the Course Planner Login page

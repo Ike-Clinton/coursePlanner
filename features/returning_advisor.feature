@@ -11,6 +11,6 @@ Feature: Logging in as a returning advisor
 
 Scenario: Logging in as an advisor
   Given I am on the Course Planner Login page
-	When I fill in username with mv@citadel.edu
-	And I click submit
+	When I fill in email with mv@citadel.edu
+	And I press submit
 	Then I should be on the Course Planner Advisor page
