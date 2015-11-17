@@ -31,15 +31,15 @@ class CoursesController < ApplicationController
   def submit_login
       user = User.find_by email: params[:email]
       # Throws error if the email entered does not exists
-      unless user
-        flash.now[:danger] = 'Invalid Email Entered'
-      end
-      
-      if user.email == "mv@citadel.edu"
-        redirect_to "/advisor"
-      else
-        redirect_to "/student"  
-      end
+      if user
+        if user.email == "mv@citadel.edu"
+          redirect_to "/advisor"
+        else
+          redirect_to "/student"  
+        end
+    else
+      flash.now[:danger] = 'User does not exist!'
+    end
       
       
 
@@ -65,6 +65,10 @@ class CoursesController < ApplicationController
   
   def student
   
+  end
+  
+  def advisor
+    
   end
   
 end

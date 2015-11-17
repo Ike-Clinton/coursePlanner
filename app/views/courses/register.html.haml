@@ -27,7 +27,9 @@
         #content
         = form_tag '/register' do
           = field_set_tag do
-            = text_field_tag :title
+            = text_field_tag :email
+            = text_field_tag :name
+            = text_field_tag :academic_class
             = submit_tag 'Submit'
  
       #side_bar
