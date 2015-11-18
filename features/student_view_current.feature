@@ -5,9 +5,7 @@ Feature: View my current classes as a student
   
   Background: The user iclinton@citadel.edu has already registered
     
-  Given the following user exists
-  | email                   | name | academic_class | is_advisor |
-  | iclinton@citadel.edu    | Ike  | 1a             | false      |
+  Given I am an authenticated student
   
   Given the following class_history exists
   | email                | class_name | crn   |
