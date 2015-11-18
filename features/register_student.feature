@@ -1,7 +1,7 @@
 Feature: Registering A New Student
   As a new student when I click register, 
-  Then I should be able taken to the register new student page
-  So that I can record my previous classes
+  Then I should be taken to the new user page
+  So that I can register for an account
 
 Scenario: Navigating to the register page
   Given I am on the Course Planner Welcome page
@@ -16,6 +16,4 @@ Scenario: Registering as a new student to record classes
   When I fill in is_advisor with false
   And I press Submit
   Then I should be on the Course Planner Class Registration page
-  
-Scenario: Take the Newly Created User to the class registration page
-  Given I am on the Course Planner Class Registration page
+

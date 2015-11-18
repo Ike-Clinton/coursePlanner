@@ -9,7 +9,7 @@ Feature: View my current classes as a student
   | iclinton@citadel.edu    | Ike  | 1a             | false      | 
     
   Given I am on the Course Planner Login page
-  When I fill in email with iclinton@citadel.edu
+  When I fill in "session_email" with "iclinton@citadel.edu"
   And I press Submit
   Then I should be on the Course Planner Student page
   

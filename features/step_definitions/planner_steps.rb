@@ -12,11 +12,3 @@ Given /the following class_history exists/ do |class_table|
   end
 end
 
-When(/^I fill in email with mv@citadel\.edu$/) do
-  fill_in("session_email", :with => "mv@citadel.edu")
-end
-
-When(/^I fill in email with iclinton@citadel\.edu$/) do
-  fill_in("session_email", :with => "iclinton@citadel.edu")
-end
-
