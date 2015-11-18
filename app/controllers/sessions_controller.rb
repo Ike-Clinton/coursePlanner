@@ -6,6 +6,13 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user
+      log_in user
+      if user.is_advisor == 'false'
+        redirect_to "/student"
+      else
+        redirect_to "/advisor"
+      end
+      
       # Log in the user and show them their relevant page
     else
       # Create an error message
