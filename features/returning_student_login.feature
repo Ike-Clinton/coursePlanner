@@ -7,8 +7,8 @@ Feature: Logging in as returning student
     
   Given the following user exists
   | email                   | name | academic_class | is_advisor |
-  | iclinton@citadel.edu    | Ike  | 1a             | false        |
-	
+  | iclinton@citadel.edu    | Ike  | 1a             | false      |
+
 Scenario: Logging in as a returning student
     Given I am on the Course Planner Login page
     When I fill in email with iclinton@citadel.edu

@@ -4,15 +4,19 @@ Feature: View my current classes as a student
   So that I can see what I have taken in the past
   
   Background: The user iclinton@citadel.edu has already registered
+    Given the following user exists
+  | email                   | name | academic_class | is_advisor |
+  | iclinton@citadel.edu    | Ike  | 1a             | false      | 
     
-  Given I am an authenticated student
+  Given I am on the Course Planner Login page
+  When I fill in email with iclinton@citadel.edu
+  And I press Submit
+  Then I should be on the Course Planner Student page
   
   Given the following class_history exists
   | email                | class_name | crn   |
   | iclinton@citadel.edu | CSCI 201   | 12345 |
 	
-Scenario: Logging in as a returning student
-    Given I am on the Course Planner Login page
-    When I fill in email with iclinton@citadel.edu
-    And I press Submit
-    Then I should be on the Course Planner Student page
+Scenario: View my current course history
+    Given I am on the Course Planner Student page
+    Then I should see 12345

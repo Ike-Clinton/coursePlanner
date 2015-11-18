@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-18T04:37:06+00:00">2015-11-18T04:37:06+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-18T05:05:29+00:00">2015-11-18T05:05:29+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -24,8 +24,8 @@
     (<span class="covered_percent"><span class="red">66.67%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.79
+       <span class="green">
+         1.1
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>28</td>
         <td>14</td>
         <td>14</td>
-        <td>0.5</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -77,7 +77,7 @@
         <td>14</td>
         <td>11</td>
         <td>3</td>
-        <td>1.1</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -142,8 +142,8 @@
     (<span class="covered_percent"><span class="red">62.22%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.72
+       <span class="yellow">
+         1.0
        </span>
     </span> hits/line)
   </h2>
@@ -185,7 +185,7 @@
         <td>28</td>
         <td>14</td>
         <td>14</td>
-        <td>0.5</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -195,7 +195,7 @@
         <td>14</td>
         <td>11</td>
         <td>3</td>
-        <td>1.1</td>
+        <td>1.8</td>
       </tr>
       
     </tbody>
@@ -304,7 +304,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.02
+         1.48
        </span>
     </span> hits/line)
   </h2>
@@ -356,7 +356,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>2.8</td>
       </tr>
       
     </tbody>
@@ -887,8 +887,8 @@
           <code class="ruby">  def student</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="69">
+          <span class="hits">3</span>
           
           <code class="ruby">    @classes = ClassHistory.where(email: current_user.email)</code>
         </li>
@@ -1025,32 +1025,32 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="12">
+          <span class="hits">4</span>
           
           <code class="ruby">    user = User.find_by(email: params[:session][:email].downcase)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="13">
+          <span class="hits">4</span>
           
           <code class="ruby">    if user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="14">
+          <span class="hits">4</span>
           
           <code class="ruby">      log_in user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
           
           <code class="ruby">      if user.is_advisor == &#39;false&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
           
           <code class="ruby">        redirect_to &quot;/student&quot;</code>
         </li>
@@ -1337,8 +1337,8 @@
           <code class="ruby">  def log_in(user)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="5">
+          <span class="hits">4</span>
           
           <code class="ruby">    session[:user_id] = user.id</code>
         </li>
@@ -1361,8 +1361,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="9">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="7" data-linenumber="9">
+          <span class="hits">7</span>
           
           <code class="ruby">    @current_user ||= User.find_by(id: session[:user_id])</code>
         </li>
