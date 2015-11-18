@@ -85,8 +85,7 @@ class CoursesController < ApplicationController
   end
   
   def student
-    @email = session[:user].email
-    @classes = ClassHistory.where(email: @email)
+    @classes = ClassHistory.where(email: current_user.email)
   
   end
   

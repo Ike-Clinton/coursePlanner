@@ -90,7 +90,6 @@
         null,
         1,
         1,
-        0,
         null,
         null,
         null,
@@ -138,7 +137,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         null
@@ -149,6 +148,11 @@
       ],
       "/home/ubuntu/workspace/coursePlanner/app/controllers/sessions_controller.rb": [
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
         1,
         null,
         null,
@@ -176,9 +180,13 @@
         null,
         null,
         null
+      ],
+      "/home/ubuntu/workspace/coursePlanner/app/models/class_history.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1447815700
+    "timestamp": 1447816146
   },
   "RSpec": {
     "coverage": {
