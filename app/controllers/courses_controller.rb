@@ -51,7 +51,8 @@ class CoursesController < ApplicationController
     
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
-        ClassHistory.create!(@user.email, checkbox.class_name, checkbox.crn)
+        
+        ClassHistory.create!(@user.email, ihavenoidea.class_name, ihavenoidea.crn)
       end
     end
   end
