@@ -21,4 +21,4 @@ Feature: View my course plan as a student
 	
 Scenario: Logging in as a returning student to view my course plan
     Given I am on the Course Planner Student page
-    Then I should see 12345
+    Then I should see "12345"

@@ -16,4 +16,5 @@ Scenario: Registering as a new student to record classes
   When I fill in "user_is_advisor" with "false"
   And I press Submit
   Then I should be on the Course Planner Class Registration page
+  # TODO: Add a line that checks that the user was created successfully
 

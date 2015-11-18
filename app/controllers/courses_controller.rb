@@ -29,6 +29,10 @@ class CoursesController < ApplicationController
     end
     # Otherwise, create the user in the DB
     @user = User.create!(courses_params)
+    # Log them in since they have an account
+    # TODO Add code to handle case where user creates account
+    # but does not register for classes
+    log_in @user
     if @user
       # Currently, a user can just declare they are an advisor
       # TODO: Add trusted advisor list to prevent students from

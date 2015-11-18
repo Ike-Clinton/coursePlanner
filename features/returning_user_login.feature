@@ -18,8 +18,6 @@ Scenario: Logging in as a returning student
     When I fill in "session_email" with "iclinton@citadel.edu"
     And I press Submit
     Then I should be on the Course Planner Student page
-    
-
 
 Scenario: Logging in as a returning advisor
   Given I am on the Course Planner Login page
