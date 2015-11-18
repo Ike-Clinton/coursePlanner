@@ -6,4 +6,4 @@ Feature: Navigating to the register page
 Scenario: Navigating to the register page
   Given I am on the Course Planner Welcome page
 	When I follow Register
-	Then I should be on the Course Planner Register page
+	Then I should be on the Course Planner User Registration page

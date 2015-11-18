@@ -2,26 +2,18 @@
 %p
 Register for some classes Yo
 %p
-This is the register page.
+This is the class registration page.
 #content
 
 -# TODO Change CRN to class number or something else. These aren't CRNs
 -# TODO Change textbox data to the right one not 355
 -# TODO Display textboxes dynamically on page with a loop or something
 
-= form_for(:user, url: "/register") do |f|
+Welcome #{current_user.name}, please select the courses you have taken
+
+= form_for(:classes, url: "/register_classes") do |f|
   .form-group
-    = f.label :email
-    = f.email_field :email, class: 'form-control'
-    = f.label :name
-    = f.text_field :name, class: 'form-control'
-    = f.label :academic_class
-    = f.text_field :academic_class, class: 'form-control'
-    = f.label :is_advisor
-    = f.text_field :is_advisor, class: 'form-control'
-    = submit_tag "register_classes"
-    .form-group
-      = f.label :Please_select_the_courses_you_have_taken
+    = f.label :Please_select_the_courses_you_have_taken
     .form-group
       = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
       = f.label(:course, "355 Programming Languages")

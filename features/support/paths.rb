@@ -12,8 +12,11 @@ module NavigationHelpers
     when /Course Planner Welcome page/
       '/'
     
-    when /Course Planner Register page/
-      '/register'
+    when /Course Planner User Registration page/
+      '/register_user'
+      
+    when /Course Planner Class Registration page/
+      '/register_classes'
       
      when /Course Planner Login page/
       '/login'
