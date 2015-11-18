@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
     redirect_to "/student"
   end
   
-  def submit_register
+  def submit_register_user
      # If the user already exists, inform the user and return
     if User.find_by email: params[:email]
       flash[:warning] = "User already exists!"
@@ -30,9 +30,9 @@ class CoursesController < ApplicationController
     # Otherwise, create the user in the DB
     @user = User.create!(courses_params)
     
-    # for each checkbox do |checkbox|
-    #   ClassHistory.create!(@user.email, checkbox.name, checkbox.crn)
-    # end
+    @class_history.each do |checkbox|
+       ClassHistory.create!(@user.email, checkbox)
+    end
     
     if @user
         # Currently, a user can just declare they are an advisor
@@ -46,6 +46,10 @@ class CoursesController < ApplicationController
     end
     # Shouldn't get here
     redirect_to "/error" and return
+  end
+  
+  def submit_register_classes
+    
   end
   
   def register

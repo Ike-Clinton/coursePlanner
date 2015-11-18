@@ -12,7 +12,9 @@ Rails.application.routes.draw do
    get 'index' => 'courses#index'
    
    get 'register' => 'courses#register'
-   post 'register' => 'courses#submit_register'
+   post 'register' => 'courses#submit_register_user'
+   
+   post 'classregister' => 'courses#submit_register_classes'
    
    get 'login' => 'sessions#new'
    post 'login' => 'sessions#create'
