@@ -7,10 +7,10 @@ Given /the following user exists/ do |users_table|
 end
 
 When(/^I fill in email with mv@citadel\.edu$/) do
-  fill_in(:email, :with => "mv@citadel.edu")
+  fill_in("session_email", :with => "mv@citadel.edu")
 end
 
 When(/^I fill in email with iclinton@citadel\.edu$/) do
-  fill_in(:email, :with => "iclinton@citadel.edu")
+  fill_in("session_email", :with => "iclinton@citadel.edu")
 end
 
