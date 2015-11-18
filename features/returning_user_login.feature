@@ -8,6 +8,10 @@ Feature: Logging in as returning student
   Given the following user exists
   | email                   | name | academic_class | is_advisor |
   | iclinton@citadel.edu    | Ike  | 1a             | false      |
+  
+  Given the following user exists
+  | email                   | name | academic_class | is_advisor |
+  | mv@citadel.edu          | Mike | 1a             | true       |
 
 Scenario: Logging in as a returning student
     Given I am on the Course Planner Login page
@@ -15,9 +19,7 @@ Scenario: Logging in as a returning student
     And I press Submit
     Then I should be on the Course Planner Student page
     
-  Given the following user exists
-  | email                   | name | academic_class | is_advisor |
-  | mv@citadel.edu          | Mike | 1a             | true        |
+
 
 Scenario: Logging in as a returning advisor
   Given I am on the Course Planner Login page

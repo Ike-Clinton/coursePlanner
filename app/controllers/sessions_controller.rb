@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user
       log_in user
-      if user.is_advisor == 'false'
-        redirect_to "/student"
-      else
+      if user.is_advisor == 'true'
         redirect_to "/advisor"
+      else
+        redirect_to "/student"
       end
       
       # Log in the user and show them their relevant page

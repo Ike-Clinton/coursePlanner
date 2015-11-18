@@ -5,7 +5,7 @@ Feature: Register my course history as a student
 	
 Scenario: Registering as a new student to record classes
     Given I am on the Course Planner Login page
-    Then I should see checkboxes on the page for classes
+    Then I should see "Programming Languages"
     When I fill in "session_email" with "iclinton@citadel.edu"
     And I press Submit
     Then I should be on the Course Planner Student page

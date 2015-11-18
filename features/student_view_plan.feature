@@ -11,7 +11,7 @@ Feature: View my course plan as a student
   
   
   Given I am on the Course Planner Login page
-  When I fill in email with iclinton@citadel.edu
+  When I fill in "session_email" with "iclinton@citadel.edu"
   And I press Submit
   Then I should be on the Course Planner Student page
   
