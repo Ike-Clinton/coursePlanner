@@ -6,7 +6,7 @@ Given /the following user exists/ do |users_table|
   end
 end
 
-Given/^I have one user "([^\"]*)" with email "([^\"]*)" and academic class "([^\"]*)" and is advisor "([^\"]*)"$/ do |name,email, academic_class, is_advisor|
+Given/^I have one\s+user "([^\"]*)" with email "([^\"]*)" and academic class "([^\"]*)" and is advisor "([^\"]*)"$/ do |name,email, academic_class, is_advisor|
     @user = User.new(:email => email,
                    :name=>name,
                    :academic_class => academic_class,
