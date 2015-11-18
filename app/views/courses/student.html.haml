@@ -11,7 +11,7 @@ Welcome #{current_user.name}, here are the classes you have taken
   %tbody
     - @classes.each do |classItem|
       %tr
-        %td= classItem.name
+        %td= classItem.class_name
         %td= classItem.crn
 %p
 And these are the classes you need to take to graduate:

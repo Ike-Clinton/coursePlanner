@@ -19,9 +19,7 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
+        null,
         null,
         null,
         null,
@@ -50,8 +48,12 @@
         null,
         null,
         1,
+        null,
+        0,
+        null,
         0,
         0,
+        0,
         null,
         null,
         null,
@@ -82,7 +84,7 @@
         null,
         null,
         1,
-        3,
+        5,
         null,
         null,
         null,
@@ -130,7 +132,7 @@
         null,
         null,
         1,
-        7,
+        11,
         null,
         null,
         null
@@ -179,7 +181,7 @@
         null
       ]
     },
-    "timestamp": 1447864645
+    "timestamp": 1447872362
   },
   "RSpec": {
     "coverage": {

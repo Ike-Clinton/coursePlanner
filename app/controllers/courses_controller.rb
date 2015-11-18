@@ -15,9 +15,7 @@ class CoursesController < ApplicationController
   
   # Create CRUD operation
   def create
-    @user = User.create!(user_params)
-    flash[:warning] = "#{@user.email} was successfully created."
-    redirect_to "/student"
+
   end
   
   # Action for submitting the register form
@@ -46,7 +44,11 @@ class CoursesController < ApplicationController
   end
   
   def submit_register_classes
-    @class_history.each do |checkbox|
+    # grab a reference to the user who just registered/logged in
+    @user = current_user
+    # here we want to iterate through each check box from the form
+    @classes = params[:classes]
+    @classes.each do |checkbox|
       ClassHistory.create!(@user.email, checkbox)
     end
   end

@@ -6,9 +6,9 @@ Given /the following user exists/ do |users_table|
   end
 end
 
-Given /the following class_history exists/ do |class_table|
+Given /the following classes history exists/ do |class_table|
   class_table.hashes.each do |classItem|
-    ClassHistory.create!(class_table)
+    ClassHistory.create!(classItem)
   end
 end
 
