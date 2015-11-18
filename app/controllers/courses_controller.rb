@@ -80,11 +80,12 @@ class CoursesController < ApplicationController
   end
   
   def update
-    
+
   end
   
   def student
-    
+    @user = session[:user]
+    @classes = ClassHistory.where(email: @user.email)
   
   end
   
