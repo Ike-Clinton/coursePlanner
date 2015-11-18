@@ -48,6 +48,7 @@ class CoursesController < ApplicationController
     @user = current_user
     # here we want to iterate through each check box from the form
     @classes = params[:classes]
+    
     @classes.each do |checkbox_array|
       checkbox_array.hashes.each do |checkbox|
         ClassHistory.create!(@user.email, checkbox.class_name, checkbox.crn)
