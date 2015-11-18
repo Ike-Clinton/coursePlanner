@@ -20,37 +20,36 @@ class CoursesController < ApplicationController
     redirect_to "/student"
   end
   
-  def submit_register_user
-     # If the user already exists, inform the user and return
-    if User.find_by email: params[:email]
-      flash[:warning] = "User already exists!"
-      redirect_to "/register" and return
-    end
-    
-    # Otherwise, create the user in the DB
-    @user = User.create!(courses_params)
-    
-    @class_history.each do |checkbox|
-       ClassHistory.create!(@user.email, checkbox)
-    end
-    
-    if @user
+  # Action for submitting the register form
+  def submit_register
+    # Handle the register_user part of the form
+    if params[:commit] == "register_user"
+      if User.find_by email: params[:email]
+        flash[:warning] = "User already exists!"
+        redirect_to "/register" and return
+      end
+      # Otherwise, create the user in the DB
+      @user = User.create!(courses_params)
+      if @user
         # Currently, a user can just declare they are an advisor
         # TODO: Add trusted advisor list to prevent students from
         # escalating privs
         if @user.is_advisor == "true"
-          redirect_to "/advisor" and return
+          redirect_to "/advisor"
         else
-          redirect_to "/student" and return
+          redirect_to "/student"
         end
-    end
-    # Shouldn't get here
-    redirect_to "/error" and return
-  end
-  
-  def submit_register_classes
+      end
     
+    else
+      @class_history.each do |checkbox|
+        ClassHistory.create!(@user.email, checkbox)
+      end
+    end
+
   end
+    
+
   
   def register
     

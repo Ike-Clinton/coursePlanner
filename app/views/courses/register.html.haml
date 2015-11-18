@@ -16,8 +16,10 @@ This is the register page.
     = f.text_field :academic_class, class: 'form-control'
     = f.label :is_advisor
     = f.text_field :is_advisor, class: 'form-control'
-    
-= form_for(:class_history, url: "/register") do |f|
+-# TODO Change CRN to class number or something else. These aren't CRNs
+-# TODO Change textbox data to the right one not 355
+-# TODO Display textboxes dynamically on page with a loop or something
+= form_for(:class_history, url: "/registerclasses") do |f|
   .form-group
     = f.label :Please_select_the_courses_you_have_taken
   .form-group
