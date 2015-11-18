@@ -6,7 +6,13 @@ Given /the following user exists/ do |users_table|
   end
 end
 
-Given(/^the following class_history exists$/) do |class_table|
+Given(/the following user is logged in$/) do |login_table|
+  login_table.hashes.each do |login|
+    log_in User.find_by email: login
+  end
+end
+
+Given /the following class_history exists/ do |class_table|
   class_table.hashes.each do |classItem|
     ClassHistory.create!(class_table)
   end

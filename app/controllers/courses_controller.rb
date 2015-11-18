@@ -4,6 +4,10 @@ class CoursesController < ApplicationController
   def courses_params
     params.require(:user).permit(:email, :name, :academic_class, :is_advisor)
   end  
+  
+  def class_history_params
+    params.require(:classes).permit(:email, :class_name, :crn)
+  end
     
   def index
       

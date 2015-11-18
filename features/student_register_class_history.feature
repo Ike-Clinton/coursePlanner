@@ -8,6 +8,10 @@ Feature: Register my course history as a student
   Given the following user exists
   | email                   | name | academic_class | is_advisor |
   | iclinton@citadel.edu    | Ike  | 1a             | false      |
+
+  Given the following user is logged in
+  | email               |
+  | iclinton@citadel.edu|
   
   Given the following class_history exists
   |email                 | class_name | crn   |
