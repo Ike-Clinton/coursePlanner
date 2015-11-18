@@ -48,8 +48,10 @@ class CoursesController < ApplicationController
     @user = current_user
     # here we want to iterate through each check box from the form
     @classes = params[:classes]
-    @classes.each do |checkbox|
-      ClassHistory.create!(@user.email, checkbox)
+    @classes.each do |checkbox_array|
+      checkbox_array.hashes.each do |checkbox|
+        ClassHistory.create!(@user.email, checkbox.class_name, checkbox.crn)
+      end
     end
   end
   
@@ -80,8 +82,9 @@ class CoursesController < ApplicationController
   end
   
   def student
+    # TODO Redirect to /register if they have not registered their classes yet
     @classes = ClassHistory.where(email: current_user.email)
-  
+    
   end
   
   def advisor

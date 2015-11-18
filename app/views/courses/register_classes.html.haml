@@ -6,7 +6,6 @@ This is the class registration page.
 #content
 
 -# TODO Change CRN to class number or something else. These aren't CRNs
--# TODO Change textbox data to the right one not 355
 -# TODO Display textboxes dynamically on page with a loop or something
 
 Welcome NoUser, please select the courses you have taken
@@ -21,28 +20,28 @@ Welcome NoUser, please select the courses you have taken
       = f.check_box(:course, "class_name" => "Operating Systems", "crn" => "405")
       = f.label(:course, "405 Operating Systems")
     .form-group
-      = f.check_box(:course, "class_name" => "Introduction to Computer Science", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Introduction to Computer Science I", "crn" => "201")
       = f.label(:course, "201 Introduction to Computer Science")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Data Structures", "crn" => "223")
       = f.label(:course, "223 Data Structures")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Introduction to Computer Science II", "crn" => "202")
       = f.label(:course, "202 Introduction to Computer Science")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Computer Organization & Programming", "crn" => "305")
       = f.label(:course, "305 Computer Organization & Programming")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Database Design", "crn" => "320")
       = f.label(:course, "320 Database Design")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Senior Seminar", "crn" => "495")
       = f.label(:course, "495 Senior Seminar")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Networks & Internets", "crn" => "317")
       = f.label(:course, "317 Networks & Internets")
     .form-group
-      = f.check_box(:course, "class_name" => "Programming Languages", "crn" => "355")
+      = f.check_box(:course, "class_name" => "Software Engineering", "crn" => "420")
       = f.label(:course, "420 Software Engineering")
     .form-group
       = f.submit "Submit", class: "btn btn-primary"
