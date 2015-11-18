@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   end  
   
   def class_history_params
-    params.require(:classes).permit(:email, :class_name, :crn)
+    params.require(:classes).permit(:class_name, :crn)
   end
     
   def index
@@ -29,6 +29,11 @@ class CoursesController < ApplicationController
     
     # Otherwise, create the user in the DB
     @user = User.create!(courses_params)
+    
+    # for each checkbox do |checkbox|
+    #   ClassHistory.create!(@user.email, checkbox.name, checkbox.crn)
+    # end
+    
     if @user
         # Currently, a user can just declare they are an advisor
         # TODO: Add trusted advisor list to prevent students from
