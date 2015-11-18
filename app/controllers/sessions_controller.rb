@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  
+  def session_params
+    params.require(:user).permit(:email, :name, :academic_class, :is_advisor, :id)
+  end
+  
   def new
     
   end
