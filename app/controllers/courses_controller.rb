@@ -41,7 +41,7 @@ class CoursesController < ApplicationController
         end
       end
     
-    else
+    elsif params[:commit] == "register_classes"
       @class_history.each do |checkbox|
         ClassHistory.create!(@user.email, checkbox)
       end
