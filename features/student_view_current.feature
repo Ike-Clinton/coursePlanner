@@ -10,8 +10,8 @@ Feature: View my current classes as a student
   | iclinton@citadel.edu    | Ike  | 1a             | false      |
   
   Given the following class_history exists
-  |email                 | name | crn   | class_name |
-  | iclinton@citadel.edu | Ike  | 12345 | CSCI 201   |
+  | email                | class_name | crn   |
+  | iclinton@citadel.edu | CSCI 201   | 12345 |
 	
 Scenario: Logging in as a returning student
     Given I am on the Course Planner Login page

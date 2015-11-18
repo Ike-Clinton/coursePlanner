@@ -43,29 +43,6 @@ class CoursesController < ApplicationController
     
   end
   
-  def submit_login
-      # Find the user by their email
-      # TODO: Add password based auth (on icebox for now)
-      @user = User.find_by email: params[:email]
-      session[:user] = @user
-      # Flash error if email does not exist and redirectes back to login
-      if @user
-        # If the user exists, display the appropriate view based on permissions
-        if @user.is_advisor == "true" 
-          redirect_to "/advisor"
-        else
-          redirect_to "/student" 
-        end
-    else
-      # Error message for when user != true
-      flash[:warning] = 'User does not exist!'
-      redirect_to "/login"
-    end
-      
-      
-
-  end
-  
   def login
     
   end

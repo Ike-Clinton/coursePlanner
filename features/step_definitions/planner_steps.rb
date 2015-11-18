@@ -6,6 +6,12 @@ Given /the following user exists/ do |users_table|
   end
 end
 
+Given(/^the following class_history exists$/) do |class_table|
+  class_table.hashes.each do |classItem|
+    ClassHistory.create!(class_table)
+  end
+end
+
 When(/^I fill in email with mv@citadel\.edu$/) do
   fill_in("session_email", :with => "mv@citadel.edu")
 end

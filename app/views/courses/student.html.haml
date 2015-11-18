@@ -2,15 +2,16 @@
 %h1 The Student View Page
 %p
 Welcome #{current_user.name}, here are the classes you have taken
+
 %table#classes
   %head
     %tr
       %th Class
       %th CRN
   %tbody
-    - @classes.each do |class|
+    - @classes.each do |classItem|
       %tr
-        %td= class.name
-        %td= class.crn
+        %td= classItem.name
+        %td= classItem.crn
 %p
 And these are the classes you need to take to graduate:

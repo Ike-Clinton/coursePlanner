@@ -10,9 +10,9 @@ Feature: Register my course history as a student
   | iclinton@citadel.edu    | Ike  | 1a             | false      |
   
   Given the following class_history exists
-  |email                 | name | crn   | class_name |
-  | iclinton@citadel.edu | Ike  | 12345 | CSCI 201   |
-  | iclinton@citadel.edu | Ike  | 67890 | CSCI 202   |
+  |email                 | class_name | crn   |
+  | iclinton@citadel.edu | CSCI 201   | 12345  |
+  | iclinton@citadel.edu | CSCI 202   | 67890  |
 	
 Scenario: Registering as a new student to record classes
     Given I am on the Course Planner Login page
