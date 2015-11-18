@@ -5,8 +5,9 @@ Register for some classes Yo
 This is the register page.
 #content
 
-.form
-  = form_for(:user, url: "/register") do |f|
+
+= form_for(:user, url: "/register") do |f|
+  .form-group
     = f.label :email
     = f.email_field :email, class: 'form-control'
     = f.label :name
@@ -15,4 +16,38 @@ This is the register page.
     = f.text_field :academic_class, class: 'form-control'
     = f.label :is_advisor
     = f.text_field :is_advisor, class: 'form-control'
+  .form-group
+    = f.label :Please_select_the_courses_you_have_taken
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "355 Programming Languages")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "405 Operating Systems")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "201 Introduction to Computer Science")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "223 Data Structures")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "202 Introduction to Computer Science")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "305 Computer Organization & Programming")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "320 Database Design")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "495 Senior Seminar")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "317 Networks & Internets")
+  .form-group
+    = f.check_box(:course)
+    = f.label(:course, "420 Software Engineering")
+  .form-group
     = f.submit "Submit", class: "btn btn-primary"
+    
