@@ -8,7 +8,7 @@ end
 
 Given(/the following user is logged in$/) do |login_table|
   login_table.hashes.each do |login|
-    log_in User.find_by email: login
+    log_in User.find_by login
   end
 end
 
