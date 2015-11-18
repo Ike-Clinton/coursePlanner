@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   end  
   
   def class_history_params
-    params.require(:classes).permit(:class_name, :crn)
+    params.require(:classes).permit(:email, :class_name, :crn)
   end
     
   def index
@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
     @classes = params[:classes]
     
     @classes.each do |checkbox_array|
-      checkbox_array.hashes.each do |checkbox|
+      checkbox_array.each do |checkbox|
         ClassHistory.create!(@user.email, checkbox.class_name, checkbox.crn)
       end
     end
