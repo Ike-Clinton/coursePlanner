@@ -51,12 +51,13 @@ class CoursesController < ApplicationController
     
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
-        new = ClassHistory.new
-        new.email = @user.email
-        new.class_name = checkbox[1]
-        new.crn = checkbox[2]
-        new.save
-        
+        if !checkbox[1].nil?
+          new = ClassHistory.new
+          new.email = @user.email
+          new.class_name = checkbox[1].split(/,/)[0]
+          new.crn = checkbox[1].split(/,/)[1]
+          new.save
+        end
         
       end
     end
