@@ -57,23 +57,25 @@ class CoursesController < ApplicationController
     @selected[:names] = ""
     @selected[:crns] = ""
     
+    # Iterate through all the checkbox param data
     count = 0 # counter for loop
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
         if !checkbox[1].nil? # if left unchecked
           count+=1
           # Returns {:name=>\"Programming Languages\"
-          @selected[:names] << checkbox[1].split(/,/)[0].to_s.gsub(/name[{}:=>\"]/, '').gsub(/\d/, ' ') # Need to figure out what this regex should be
+          @selected[:names] << checkbox[1].split(/,/)[0].to_s.gsub(/\d*{:name[{:=>\\"]*/, '').gsub(/\\"/, '*').gsub() << '' # Need to figure out what this regex should be
           # Returns  :crn=>\"355\"}
-          @selected[:crns] << checkbox[1].split(/,/)[1].to_s.gsub(/crn[{}:=>\"]/, '')
+          @selected[:crns] << checkbox[1].split(/,/)[1].to_s.gsub(/[{:crn=>\\"]*/, '').gsub(/[}]/, '')
         end
       end
     end
     
+    # Iterate through just the ones that were "selected"
     for i in 0..count
       new = ClassHistory.new
       new.email = @user.email
-      new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/ /)[i]
+      new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
       new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/ /)[i]
       new.save
     end
