@@ -46,21 +46,30 @@ class CoursesController < ApplicationController
   def submit_register_classes
     # grab a reference to the user who just registered/logged in
     @user = current_user
-    # here we want to iterate through each check box from the form
+    # Classes is a hash of all the checkbox form data
     @classes = params[:classes]
+    # Store all of the boxes that were checked
+    @selected = {}
     
+    count = 0 # counter for loop
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
-        if !checkbox[1].nil?
-          new = ClassHistory.new
-          new.email = @user.email
-          new.class_name = checkbox[1].split(/,/)[0]
-          new.crn = checkbox[1].split(/,/)[1]
-          new.save
+        if !checkbox[1].nil? # if left unchecked
+          count+=1
+          @selected[:class_name][:count] = checkbox[1].split(/,/)[0]
+          @selected[:crn][:count] = checkbox[1].split(/,/)[1]
         end
-        
       end
     end
+    
+    for i in 0..count
+      new = ClassHistory.new
+      new.email = @user.email
+      new.class_name = @selected[:class_name][:i]
+      new.crn = @selected[:crn][:i]
+      new.save
+    end
+
     redirect_to "/student"
   end
   
