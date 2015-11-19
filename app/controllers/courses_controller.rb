@@ -1,3 +1,4 @@
+# TODO Add handling for if no user is logged in and tries to access logged in page
 class CoursesController < ApplicationController
     require 'courses_helper.rb'
   #Necessary for accessing parameters in the view, etc  
@@ -110,8 +111,15 @@ class CoursesController < ApplicationController
   end
   
   def student
+    # TODO this doesn't work
+    unless current_user
+      redirect_to "/index"
+      flash[:warning] = "You must be logged in to do that!"
+    end
     # TODO Redirect to /register if they have not registered their classes yet
     @classes = ClassHistory.where(email: current_user.email)
+    # Nil because calculating required is not implemented yet
+    @classes_required = ClassHistory.where(email: nil)
     
   end
   

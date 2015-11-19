@@ -6,7 +6,7 @@ Welcome #{current_user.name}, here are the classes you have taken
 %table#classes
   %head
     %tr
-      %th Class
+      %th Class    
       %th Class Number
   %tbody
     - @classes.each do |classItem|
@@ -15,3 +15,14 @@ Welcome #{current_user.name}, here are the classes you have taken
         %td= classItem.crn
 %p
 And these are the classes you need to take to graduate:
+
+%table#classes_required
+  %head
+    %tr
+      %th Class    
+      %th Class Number
+  %tbody
+    - @classes_required.each do |classItem|
+      %tr
+        %td= classItem.class_name
+        %td= classItem.crn
