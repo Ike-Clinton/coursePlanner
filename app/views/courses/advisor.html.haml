@@ -3,4 +3,16 @@
 %p
 Welcome #{current_user.name}, here are the students under your command
 %p
+
+%table#my_students
+  %head
+    %tr
+      %th Name    
+      %th Email
+  %tbody
+    - @my_students.each do |student|
+      %tr
+        %td= student.name
+        %td= student.email
+
 And these are links to all of their completed plans

@@ -121,9 +121,11 @@ class CoursesController < ApplicationController
     # Nil because calculating required is not implemented yet
     @classes_required = ClassHistory.where(email: nil)
     
+    
   end
   
   def advisor
+    @my_students = User.all
     
   end
   
