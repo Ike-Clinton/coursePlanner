@@ -125,6 +125,7 @@ class CoursesController < ApplicationController
   end
   
   def advisor
+    #TODO make student links link_to
     @my_students = User.all
     
   end
