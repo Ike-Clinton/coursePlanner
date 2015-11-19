@@ -56,8 +56,8 @@ class CoursesController < ApplicationController
       checkbox_array.each do |checkbox|
         if !checkbox[1].nil? # if left unchecked
           count+=1
-          @selected[:class_name][:count] = checkbox[1].split(/,/)[0]
-          @selected[:crn][:count] = checkbox[1].split(/,/)[1]
+          @selected[:names] << checkbox[1].split(/,/)[0]
+          @selected[:crns] << checkbox[1].split(/,/)[1]
         end
       end
     end
@@ -65,8 +65,8 @@ class CoursesController < ApplicationController
     for i in 0..count
       new = ClassHistory.new
       new.email = @user.email
-      new.class_name = @selected[:class_name][:i]
-      new.crn = @selected[:crn][:i]
+      new.class_name = @selected[:names].split(/ /)[i]
+      new.crn = @selected[:crn].split(/ /)[i]
       new.save
     end
 
