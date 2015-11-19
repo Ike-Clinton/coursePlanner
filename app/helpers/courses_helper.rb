@@ -1,18 +1,20 @@
 module CoursesHelper
     
-    #Logs in the given user
+    # Logs in the given user
     def log_in(user)
         session[:user_id] = user.id
     end
-    #Returns the current logged-in user (if any)
+    # Returns the current logged-in user (if any)
     def current_user
         @current_user ||= User.find_by(id: session[:user_id])
     end
-    #Returns true if the user is logged in and False if not
+    # Returns true if the user is logged in and False if not
     def logged_in?
         !current_user.nil?
     end
     
+    #currently unused, but we might need something like this later
+    # to map requirements to what a student has taken
     def lookup_class(id)
       
       case id
@@ -22,4 +24,5 @@ module CoursesHelper
         
       end
     end
+    
 end
