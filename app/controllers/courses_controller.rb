@@ -53,8 +53,8 @@ class CoursesController < ApplicationController
       checkbox_array.each do |checkbox|
         new = ClassHistory.new
         new.email = @user.email
-        new.class_name = checkbox.name
-        new.crn = checkbox.crn
+        new.class_name = checkbox[1]
+        new.crn = checkbox[2]
         new.save
         
         
