@@ -12,4 +12,14 @@ module CoursesHelper
     def logged_in?
         !current_user.nil?
     end
+    
+    def lookup_class(id)
+      
+      case id
+       
+      when c1
+        {class_name => "Programming Languages", crn => "355"}
+        
+      end
+    end
 end

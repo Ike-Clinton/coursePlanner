@@ -1,12 +1,12 @@
 class CoursesController < ApplicationController
-    
+    require 'courses_helper.rb'
   #Necessary for accessing parameters in the view, etc  
   def courses_params
     params.require(:user).permit(:email, :name, :academic_class, :is_advisor)
   end  
   
   def class_history_params
-    params.require(:classes).permit(:email, :class_name, :crn)
+    params.require(:classes).permit(:class_name, :crn)
   end
     
   def index
@@ -51,10 +51,16 @@ class CoursesController < ApplicationController
     
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
+        new = ClassHistory.new
+        new.email = @user.email
+        new.class_name = checkbox.name
+        new.crn = checkbox.crn
+        new.save
         
-        ClassHistory.create!(@user.email, ihavenoidea.class_name, ihavenoidea.crn)
+        
       end
     end
+    redirect_to "/student"
   end
   
   def register_user
