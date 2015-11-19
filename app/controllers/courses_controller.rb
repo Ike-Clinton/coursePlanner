@@ -64,7 +64,7 @@ class CoursesController < ApplicationController
         if !checkbox[1].nil? # if left unchecked
           count+=1
           # Returns {:name=>\"Programming Languages\"
-          @selected[:names] << checkbox[1].split(/,/)[0].to_s.gsub(/\d*{:name[{:=>\\"]*/, '').gsub(/\\"/, '*').gsub() << '' # Need to figure out what this regex should be
+          @selected[:names] << checkbox[1].split(/,/)[0].to_s.gsub(/\d*{:name[{:=>\\"]*/, '').gsub(/\\"/, '*').gsub(/\d*/, '') << '' # Need to figure out what this regex should be
           # Returns  :crn=>\"355\"}
           @selected[:crns] << checkbox[1].split(/,/)[1].to_s.gsub(/[{:crn=>\\"]*/, '').gsub(/[}]/, '')
         end
