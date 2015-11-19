@@ -48,16 +48,24 @@ class CoursesController < ApplicationController
     @user = current_user
     # Classes is a hash of all the checkbox form data
     @classes = params[:classes]
+    
+    # Each element in @classes is of the form:
+    # c1"=>["0", "{:name=>\"Programming Languages\", :crn=>\"355\"}"]
+    
     # Store all of the boxes that were checked
     @selected = {}
+    @selected[:names] = ""
+    @selected[:crns] = ""
     
     count = 0 # counter for loop
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
         if !checkbox[1].nil? # if left unchecked
           count+=1
-          @selected[:names] << checkbox[1].split(/,/)[0]
-          @selected[:crns] << checkbox[1].split(/,/)[1]
+          # Returns {:name=>\"Programming Languages\"
+          @selected[:names] << checkbox[1].split(/,/)[0].to_s.gsub(//, '') # Need to figure out what this regex should be
+          # Returns  :crn=>\"355\"}
+          @selected[:crns] << checkbox[1].split(/,/)[1].to_s.gsub(//, '')
         end
       end
     end
@@ -65,8 +73,8 @@ class CoursesController < ApplicationController
     for i in 0..count
       new = ClassHistory.new
       new.email = @user.email
-      new.class_name = @selected[:names].split(/ /)[i]
-      new.crn = @selected[:crn].split(/ /)[i]
+      new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/ /)[i]
+      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/ /)[i]
       new.save
     end
 
