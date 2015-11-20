@@ -13,7 +13,7 @@
   crn: 131
 - id: 5
   class_name: First Year Basic ROTC I
-  crn: ROTC 1-1
+  crn: ROTC
 - id: 6
   class_name: Required Physical Education Part I
   crn: 101
@@ -34,7 +34,7 @@
   crn: 132
 - id: 12
   class_name: First Year Basic ROTC II
-  crn: ROTC 1-2
+  crn: ROTC
 - id: 13
   class_name: Required Physical Education Part II
   crn: 251
@@ -55,7 +55,7 @@
   crn: BCP
 - id: 19
   class_name: Second Year Basic ROTC I
-  crn: ROTC 2-1
+  crn: ROTC
 - id: 20
   class_name: Required Physical Education Part III
   crn: RPED3
@@ -67,10 +67,10 @@
   crn: 211
 - id: 23
   class_name: English American or World Literature
-  crn: ENGL 202
+  crn: ENGL
 - id: 24
   class_name: Biology Chemistry or Physics Part II
-  crn: BCP 102
+  crn: BCP
 - id: 25
   class_name: A Modern Language IV
   crn: 202
@@ -79,10 +79,10 @@
   crn: 223
 - id: 27
   class_name: Second Year Basic ROTC II
-  crn: ROTC 2-2
+  crn: ROTC
 - id: 28
   class_name: Required Physical Education Part IV
-  crn: RPED 202
+  crn: RPED
 - id: 29
   class_name: Database Design
   crn: 320
@@ -97,7 +97,7 @@
   crn: E1
 - id: 33
   class_name: First Year Advanced ROTC II
-  crn: ROTC 3-1
+  crn: ROTC
 - id: 34
   class_name: Junior Ethics Enrichment Experience
   crn: 311
@@ -115,7 +115,7 @@
   crn: 361
 - id: 39
   class_name: Biology Chemistry or Physics
-  crn: BCP4
+  crn: BCP
 - id: 40
   class_name: Operating Systems
   crn: 405
@@ -133,7 +133,7 @@
   crn: E2
 - id: 45
   class_name: Second Year Advanced ROTC I
-  crn: ROTC 4-1
+  crn: ROTC
 - id: 46
   class_name: Senior Leadership Integration Seminar
   crn: 411
@@ -154,7 +154,7 @@
   crn: E4
 - id: 52
   class_name: Second Year Advanced ROTC II
-  crn: ROTC 4-2
+  crn: ROTC
 - id: 54
   class_name: First Year Advanced ROTC I
-  crn: ROTC 3-1
+  crn: ROTC

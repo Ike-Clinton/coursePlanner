@@ -97,26 +97,25 @@ class CoursesController < ApplicationController
     @classes_required = CSCI.all
         
     @classes_taken.each do |item|
-      @classes_required.each do |item2|
-        if item.class_name == item2.class_name
-            @classes_required.delete(item2)
-        end
-      end
+      @classes_required.delete(item)
     end
   end
   
   def advisor
+    # Reference to logged in user
     @user = current_user
+    # User must be logged in to visit this page (valid token in session)
     unless @user
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
     
+    # Only lets advisors access this page
     unless @user.is_advisor == 'true'
       flash[:warning] = "You must be an advisor to do that!"
       redirect_to "/index" and return
     end
-    #TODO make student links link_to so advisors can see student plans
+    # Returns a list of all non-advisor users
     @my_students = User.where(is_advisor: 'false')
     
   end
@@ -127,16 +126,13 @@ class CoursesController < ApplicationController
     @name = User.find_by(email: user_email).name
     # TODO Redirect to /register if they have not registered their classes yet
     @classes_taken = ClassHistory.where(email: user_email)
+    # Return a list of all class in the cscis.yml file
     @classes_required = CSCI.all
         
+    # Loop through each class in the yml, remove all the ones already taken
     @classes_taken.each do |item|
-      @classes_required.each do |item2|
-        if item.class_name == item2.class_name
-            @classes_required.delete(item)
-        end
-      end
+      @classes_required.delete(item)
     end
-
   end
   
     
