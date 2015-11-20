@@ -22,7 +22,10 @@ test: &test
 
 production:
   adapter: postgresql
-  database: psql_course_planner_prod
+  database: courseplanner
+  username: iclinton
+  password: Hotel10514048
+  host: localhost
   pool: 5
   timeout: 5000
 

@@ -38,6 +38,7 @@ group :production do
   #Make sure the following gems are in production
   gem 'pg'              # PostgreSQL in prod
   gem 'rails_12factor'  # Heroku-specific production settings
+  gem "activerecord-postgresql-adapter"
   
 end
 
