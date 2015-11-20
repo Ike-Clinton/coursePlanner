@@ -111,7 +111,7 @@ class CoursesController < ApplicationController
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
-    #TODO make student links link_to
+    #TODO make student links link_to so advisors can see student plans
     @my_students = User.all
     
   end
