@@ -82,39 +82,14 @@ class CoursesController < ApplicationController
 
     redirect_to "/student"
   end
-  
-  def register_user
-    
-  end
-  
-  def register_classes
-    
-  end
-  
-  def login
-    
-  end
-  
-  
-  # Unused
-  def new
-    
-  end
-  
-  def edit
-  
-  end
-  
-  def update
 
-  end
   
   def student
     # TODO this doesn't work
     @user = current_user
     unless @user
-      redirect_to "/index"
       flash[:warning] = "You must be logged in to do that!"
+      redirect_to "/index" and return
     end
     # TODO Redirect to /register if they have not registered their classes yet
     @classes = ClassHistory.where(email: current_user.email)
@@ -129,15 +104,41 @@ class CoursesController < ApplicationController
         end
       end
     end
-    
-    
   end
   
-  
   def advisor
+    unless @user
+      flash[:warning] = "You must be logged in to do that!"
+      redirect_to "/index" and return
+    end
     #TODO make student links link_to
     @my_students = User.all
     
   end
   
+    
+  def register_user
+    
+  end
+  
+  def register_classes
+    
+  end
+  
+  def login
+    
+  end
+  
+  # Unused
+  def new
+    
+  end
+  
+  def edit
+  
+  end
+  
+  def update
+
+  end
 end
