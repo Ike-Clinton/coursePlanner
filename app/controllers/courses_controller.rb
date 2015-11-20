@@ -85,7 +85,7 @@ class CoursesController < ApplicationController
 
   
   def student
-    # TODO this doesn't work
+
     @user = current_user
     unless @user
       flash[:warning] = "You must be logged in to do that!"
@@ -107,6 +107,7 @@ class CoursesController < ApplicationController
   end
   
   def advisor
+    @user = current_user
     unless @user
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
