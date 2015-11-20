@@ -1,3 +1,5 @@
+# require 'cgi'
+
 # TODO Add handling for if no user is logged in and tries to access logged in page
 class CoursesController < ApplicationController
   #Necessary for accessing parameters in the view, etc  
@@ -91,9 +93,6 @@ class CoursesController < ApplicationController
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
-    # TODO Redirect to /register if they have not registered their classes yet
-    @classes = ClassHistory.where(email: current_user.email)
-    
     @classes_taken = ClassHistory.where(email: current_user.email)
     @classes_required = CSCI.all
         
@@ -114,7 +113,7 @@ class CoursesController < ApplicationController
     end
     
     unless @user.is_advisor == 'true'
-      flash[:warning] = "You must be an advisor to do tha!"
+      flash[:warning] = "You must be an advisor to do that!"
       redirect_to "/index" and return
     end
     #TODO make student links link_to so advisors can see student plans
@@ -124,15 +123,10 @@ class CoursesController < ApplicationController
   
   def view_student
     
-    @user = User.find_by(name: params[:student_name])
-    unless @user
-      flash[:warning] = "You must be logged in to do that!"
-      redirect_to "/index" and return
-    end
+    user_email = params[:user]
+    @name = User.find_by(email: user_email).name
     # TODO Redirect to /register if they have not registered their classes yet
-    @classes = ClassHistory.where(email: current_user.email)
-    
-    @classes_taken = ClassHistory.where(email: current_user.email)
+    @classes_taken = ClassHistory.where(email: user_email)
     @classes_required = CSCI.all
         
     @classes_taken.each do |item|

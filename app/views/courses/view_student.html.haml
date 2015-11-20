@@ -1,11 +1,10 @@
 #content
 %h1 The Student View Page
 %p
-Welcome #{current_user.name}, if you have not registerd your classes, please click
-= link_to 'Here', '/register_classes'
+
 
 %p
-Here are the classes you have taken
+Here are the classes #{@name} has taken:
 
 %table#classes
   %head
@@ -18,7 +17,7 @@ Here are the classes you have taken
         %td= classItem.class_name
         %td= classItem.crn
 %p
-And these are the classes you need to take to graduate:
+And these are the classes he/she needs to take to graduate:
 
 %table#classes_required
   %head
