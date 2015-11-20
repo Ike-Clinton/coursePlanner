@@ -132,7 +132,7 @@ class CoursesController < ApplicationController
     @classes_taken.each do |item|
       @classes_required.each do |item2|
         if item.class_name == item2.class_name
-            @classes_required.delete(item2)
+            @classes_required.delete(item)
         end
       end
     end
