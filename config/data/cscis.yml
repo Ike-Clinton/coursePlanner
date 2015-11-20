@@ -1,10 +1,31 @@
 ---
 - id: 1
-  class_name: Senior Research
-  crn: 499
-- id: 2
   class_name: Programming Languages
   crn: 355
+- id: 2
+  class_name: Operating Systems
+  crn: 405
 - id: 3
-  class_name: CSCI 202
+  class_name: Introduction to Computer Science I
+  crn: 201
+- id: 4
+  class_name: Data Structures
+  crn: 223
+- id: 5
+  class_name: Introduction to Computer Science II
   crn: 202
+- id: 6
+  class_name: Computer Organization & Programming
+  crn: 305
+- id: 7
+  class_name: Database Design
+  crn: 320
+- id: 8
+  class_name: Senior Seminar
+  crn: 495
+- id: 9
+  class_name: Networks & Internets
+  crn: 317
+- id: 10
+  class_name: Software Engineering
+  crn: 420

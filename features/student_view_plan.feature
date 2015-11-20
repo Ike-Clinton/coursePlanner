@@ -21,4 +21,4 @@ Feature: View my course plan as a student
 	
 Scenario: Logging in as a returning student to view what courses I still need to take
     Given I am on the Course Planner Student page
-    Then I should see "CSCI 202"
+    Then I should see "Introduction to Computer Science II"
