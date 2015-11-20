@@ -8,7 +8,7 @@ This is the class registration page.
 -# TODO Change CRN to class number or something else. These aren't CRNs
 -# TODO Display textboxes dynamically on page with a loop or something
 
-Welcome NoUser, please select the courses you have taken
+Welcome User, please select the courses you have taken
 
 = form_for(:classes, url: "/register_classes") do |f|
   .form-group
@@ -71,7 +71,7 @@ Welcome NoUser, please select the courses you have taken
       = f.check_box(:c19, {:multiple => "true"}, {:name => "2nd Year Basic ROTC", :crn => "ROTC 2-1"})
       = f.label(:course, "2-1 2nd Year Basic ROTC")
       .form-group
-      = f.check_box(:c20, {:multiple => "true"}, {:name => "Required Physical Education Part 3", :crn => "RPED"})
+      = f.check_box(:c20, {:multiple => "true"}, {:name => "Required Physical Education Part 3", :crn => "RPED3"})
       = f.label(:course, "RPED Required Physical Education Part 3")
     .form-group
       = f.check_box(:c21, {:multiple => "true"}, {:name => "Sophmore Seminar", :crn => "201"})
@@ -124,7 +124,7 @@ Welcome NoUser, please select the courses you have taken
     .form-group
       = f.check_box(:c37, {:multiple => "true"}, {:name => "Computer Networks & Internets", :crn => "317"})
       = f.label(:course, "317 Computer Networks & Internets")
-       .form-group
+    .form-group
       = f.check_box(:c38, {:multiple => "true"}, {:name => "Approved Elective", :crn => "A1"})
       = f.label(:course, "A1 Approved Elective")
     .form-group
@@ -133,7 +133,7 @@ Welcome NoUser, please select the courses you have taken
     .form-group
       = f.check_box(:c40, {:multiple => "true"}, {:name => "Biology, Chemistry, or Physics", :crn => "BCP4"})
       = f.label(:course, "BCP4 Biology,Chemistry, or Physics")
-       .form-group
+    .form-group
       = f.check_box(:c41, {:multiple => "true"}, {:name => "Operating Systems", :crn => "405"})
       = f.label(:course, "405 Operating Systems")
     .form-group
@@ -141,8 +141,8 @@ Welcome NoUser, please select the courses you have taken
       = f.label(:course, "420 Software Engineering")
     .form-group
       = f.check_box(:c43, {:multiple => "true"}, {:name => "Senior Seminar in Computer Science", :crn => "495"})
-      = f.label(:course, "495 Senior Seminar & Computer Science")
-       .form-group
+      = f.label(:course, "495 Senior Seminar in Computer Science")
+    .form-group
       = f.check_box(:c44, {:multiple => "true"}, {:name => "Digital Logic and Circuits", :crn => "311"})
       = f.label(:course, "311 Digital Logic and Circuits")
     .form-group
@@ -151,7 +151,7 @@ Welcome NoUser, please select the courses you have taken
     .form-group
       = f.check_box(:c46, {:multiple => "true"}, {:name => "2nd Year Advanced ROTC", :crn => "ROTC 4-1"})
       = f.label(:course, "4-1 2nd Year Advanced ROTC")
-       .form-group
+    .form-group
       = f.check_box(:c47, {:multiple => "true"}, {:name => "Senior Leadership Integration Seminar", :crn => "411"})
       = f.label(:course, "411 Senior Leadership Integration Seminar")
     .form-group
@@ -160,7 +160,7 @@ Welcome NoUser, please select the courses you have taken
     .form-group
       = f.check_box(:c49, {:multiple => "true"}, {:name => "Digital Systems Engineering", :crn => "330"})
       = f.label(:course, "317 Computer Networks & Internets")
-       .form-group
+    .form-group
       = f.check_box(:c50, {:multiple => "true"}, {:name => "Approved Elective 2", :crn => "A2"})
       = f.label(:course, "A2 Approved Elective 2")
     .form-group
@@ -169,7 +169,7 @@ Welcome NoUser, please select the courses you have taken
     .form-group
       = f.check_box(:c52, {:multiple => "true"}, {:name => "Elective 4", :crn => "E4"})
       = f.label(:course, "E4 Elective 4")
-       .form-group
+    .form-group
       = f.check_box(:c53, {:multiple => "true"}, {:name => "+2nd Year Advanced ROTC", :crn => "ROTC 4-2"})
       = f.label(:course, "311 Junior Ethics Enrichment Experience")
     .form-group

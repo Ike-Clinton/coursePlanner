@@ -112,9 +112,37 @@ class CoursesController < ApplicationController
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
+    
+    unless @user.is_advisor == 'true'
+      flash[:warning] = "You must be an advisor to do tha!"
+      redirect_to "/index" and return
+    end
     #TODO make student links link_to so advisors can see student plans
     @my_students = User.all
     
+  end
+  
+  def view_student
+    
+    @user = User.find_by(name: params[:student_name])
+    unless @user
+      flash[:warning] = "You must be logged in to do that!"
+      redirect_to "/index" and return
+    end
+    # TODO Redirect to /register if they have not registered their classes yet
+    @classes = ClassHistory.where(email: current_user.email)
+    
+    @classes_taken = ClassHistory.where(email: current_user.email)
+    @classes_required = CSCI.all
+        
+    @classes_taken.each do |item|
+      @classes_required.each do |item2|
+        if item.class_name == item2.class_name
+            @classes_required.delete(item2)
+        end
+      end
+    end
+
   end
   
     

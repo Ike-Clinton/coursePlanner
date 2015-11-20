@@ -25,6 +25,8 @@ Rails.application.routes.draw do
    get 'advisor' => 'courses#advisor'
    
    get 'logout' => 'sessions#destroy'
+   
+   post 'view_student' => 'sessions#view_student'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

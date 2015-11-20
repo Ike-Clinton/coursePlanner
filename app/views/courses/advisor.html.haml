@@ -12,7 +12,7 @@ Welcome #{current_user.name}, here are all the students who have complete course
   %tbody
     - @my_students.each do |student|
       %tr
-        %td= student.name
+        %td= link_to student.name, '/view_student', :id =
         %td= student.email
 
 And these are links to all of their completed plans

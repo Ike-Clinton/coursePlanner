@@ -17,8 +17,8 @@ Feature: View my course plan as a student
   
   Given the following classes history exists
   | email                | class_name| crn   |
-  | iclinton@citadel.edu | CSCI 201  | 12345 |
+  | iclinton@citadel.edu | Introduction to Computer Science 1  | 201 |
 	
 Scenario: Logging in as a returning student to view what courses I still need to take
     Given I am on the Course Planner Student page
-    Then I should see "Introduction to Computer Science II"
+    Then I should see "Introduction to Computer Science 2"
