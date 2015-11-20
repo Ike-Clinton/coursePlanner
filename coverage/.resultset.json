@@ -4,7 +4,6 @@
       "/home/ubuntu/workspace/coursePlanner/app/controllers/courses_controller.rb": [
         null,
         1,
-        1,
         null,
         1,
         1,
@@ -117,6 +116,7 @@
         1,
         null,
         5,
+        5,
         0,
         0,
         null,
@@ -124,11 +124,22 @@
         5,
         null,
         5,
+        5,
+        null,
+        5,
+        5,
+        10,
+        0,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
         null,
         1,
+        null,
         1,
         null,
         null,
@@ -141,6 +152,7 @@
         null,
         1,
         1,
+        null,
         null
       ],
       "/home/ubuntu/workspace/coursePlanner/app/helpers/application_helper.rb": [
@@ -165,15 +177,6 @@
         null,
         null,
         null,
-        1,
-        null,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
         null,
         null
       ],
@@ -186,7 +189,7 @@
         null,
         null,
         1,
-        16,
+        21,
         null,
         null,
         1,
@@ -238,9 +241,15 @@
       "/home/ubuntu/workspace/coursePlanner/app/models/class_history.rb": [
         1,
         null
+      ],
+      "/home/ubuntu/workspace/coursePlanner/app/models/csci.rb": [
+        null,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1447962931
+    "timestamp": 1447981216
   },
   "RSpec": {
     "coverage": {

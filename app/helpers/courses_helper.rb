@@ -1,5 +1,5 @@
 module CoursesHelper
-    
+
     # Logs in the given user
     def log_in(user)
         session[:user_id] = user.id
@@ -13,16 +13,7 @@ module CoursesHelper
         !current_user.nil?
     end
     
-    #currently unused, but we might need something like this later
-    # to map requirements to what a student has taken
-    def lookup_class(id)
-      
-      case id
-       
-      when c1
-        {class_name => "Programming Languages", crn => "355"}
-        
-      end
-    end
+   
+   
     
 end

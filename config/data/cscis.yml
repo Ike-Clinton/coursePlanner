@@ -1,0 +1,10 @@
+---
+- id: 1
+  class_name: Senior Research
+  crn: 499
+- id: 2
+  class_name: Programming Languages
+  crn: 355
+- id: 3
+  class_name: CSCI 202
+  crn: 202
