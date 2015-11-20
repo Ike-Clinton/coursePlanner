@@ -117,7 +117,7 @@ class CoursesController < ApplicationController
       redirect_to "/index" and return
     end
     #TODO make student links link_to so advisors can see student plans
-    @my_students = User.all
+    @my_students = User.where(is_advisor: 'false')
     
   end
   
