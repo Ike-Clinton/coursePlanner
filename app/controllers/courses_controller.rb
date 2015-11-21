@@ -122,6 +122,20 @@ class CoursesController < ApplicationController
   end
   
   def view_student
+    # Reference to logged in user
+    @user = current_user
+    # User must be logged in to visit this page (valid token in session)
+    unless @user
+      flash[:warning] = "You must be logged in to do that!"
+      redirect_to "/index" and return
+    end
+    
+    # Only lets advisors access this page
+    unless @user.is_advisor == 'true'
+      flash[:warning] = "You must be an advisor to do that!"
+      redirect_to "/index" and return
+    end
+    
     
     user_email = params[:user]
     @name = User.find_by(email: user_email).name
