@@ -47,10 +47,8 @@ class CoursesController < ApplicationController
     @user = current_user
     # Classes is a hash of all the checkbox form data
     @classes = params[:classes]
-    
     # Each element in @classes is of the form:
     # c1"=>["0", "{:name=>\"Programming Languages\", :crn=>\"355\"}"]
-    
     # Store all of the boxes that were checked
     @selected = {}
     @selected[:names] = ""
@@ -83,7 +81,7 @@ class CoursesController < ApplicationController
 
   
   def student
-
+    
     @user = current_user
     unless @user
       flash[:warning] = "You must be logged in to do that!"
@@ -135,8 +133,7 @@ class CoursesController < ApplicationController
       flash[:warning] = "You must be an advisor to do that!"
       redirect_to "/index" and return
     end
-    
-    
+    # grab the email from the params hash "?user=iclinton@citadel.edu"
     user_email = params[:user]
     @name = User.find_by(email: user_email).name
     # TODO Redirect to /register if they have not registered their classes yet

@@ -7,19 +7,23 @@ Feature: View Student Course Plans as an Advisor
   Background: The user iclinton@citadel.edu has already registered
     
   Given the following user exists
-  | email                   | name | academic_class | is_advisor |
-  | iclinton@citadel.edu    | Ike  | 1a             | false      |  
+  | email                   | name        | academic_class | is_advisor |
+  | iclinton@citadel.edu    | Ike Clinton | 1a             | false      |  
+  | mv@citadel.edu          | Mike        | 1a             | true       | 
   
   
   Given I am on the Course Planner Login page
-  When I fill in "session_email" with "iclinton@citadel.edu"
+  When I fill in "session_email" with "mv@citadel.edu"
   And I press Submit
-  Then I should be on the Course Planner Student page
+  Then I should be on the Course Planner Advisor page
   
   Given the following classes history exists
   | email                | class_name| crn   |
   | iclinton@citadel.edu | Introduction to Computer Science I  | 201 |
 	
-Scenario: Logging in as a returning student to view what courses I still need to take
-    Given I am on the Course Planner Student page
-    Then I should see "Introduction to Computer Science II"
+Scenario: Logging in as an Advisor to view student plan
+    Given I am on the Course Planner Advisor page
+    Then I should see "Ike Clinton"
+    When I follow Ike Clinton
+    Then I should be on the Course Planner View Student page
+    Then I should see "Introduction to Computer Science I"

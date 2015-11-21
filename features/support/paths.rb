@@ -26,6 +26,9 @@ module NavigationHelpers
         
       when /Course Planner Student page/
         '/student'
+        
+      when /Course Planner View Student page/
+        '/view_student'
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
