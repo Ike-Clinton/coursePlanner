@@ -92,9 +92,13 @@ class CoursesController < ApplicationController
     @classes_taken = ClassHistory.where(email: current_user.email)
     @classes_required = CSCI.all
         
-    # Need to fix this as well    
+    # Loop through each class in the yml, remove all the ones already taken
     @classes_taken.each do |item|
-      @classes_required.delete(item.crn)
+      @classes_required.each do |item2|
+        if item.class_name == item2.class_name
+            @classes_required.delete(item2)
+        end
+      end
     end
   end
   
@@ -128,8 +132,13 @@ class CoursesController < ApplicationController
         
     # Loop through each class in the yml, remove all the ones already taken
     @classes_taken.each do |item|
-      @classes_required.delete(item)
+      @classes_required.each do |item2|
+        if item.class_name == item2.class_name
+            @classes_required.delete(item2)
+        end
+      end
     end
+    
   end
   
     
