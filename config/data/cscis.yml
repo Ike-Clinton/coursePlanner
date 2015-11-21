@@ -1,6 +1,6 @@
 ---
 - id: 1
-  class_name: Composition & Literature I
+  class_name: Composition and Literature I
   crn: 101
 - id: 2
   class_name: Introduction to Computer Science I
@@ -9,7 +9,7 @@
   class_name: A Modern Language
   crn: 101
 - id: 4
-  class_name: Analytic Geometry & Calculus I
+  class_name: Analytic Geometry and Calculus I
   crn: 131
 - id: 5
   class_name: First Year Basic ROTC I
@@ -18,7 +18,7 @@
   class_name: Required Physical Education Part I
   crn: 101
 - id: 7
-  class_name: Composition & Literature I
+  class_name: Composition and Literature II
   crn: 102
 - id: 8
   class_name: A Modern Language II
@@ -45,7 +45,7 @@
   class_name: A Modern Language
   crn: 201
 - id: 16
-  class_name: Computer Organization & Programming
+  class_name: Computer Organization and Programming
   crn: 305
 - id: 17
   class_name: Introduction to Discrete Structures
@@ -75,7 +75,7 @@
   class_name: A Modern Language IV
   crn: 202
 - id: 26
-  class_name: Data Structures & Algorithms
+  class_name: Data Structures and Algorithms
   crn: 223
 - id: 27
   class_name: Second Year Basic ROTC II
@@ -87,7 +87,7 @@
   class_name: Database Design
   crn: 320
 - id: 30
-  class_name: Computer Organization & Programming
+  class_name: Computer Organization and Programming
   crn: 305
 - id: 31
   class_name: Biology Chemistry or Physics Part III
@@ -105,7 +105,7 @@
   class_name: Programming Languages
   crn: 355
 - id: 36
-  class_name: Computer Networks & Internets
+  class_name: Computer Networks and Internets
   crn: 317
 - id: 37
   class_name: Approved Elective

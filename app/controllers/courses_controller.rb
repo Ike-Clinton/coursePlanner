@@ -70,11 +70,11 @@ class CoursesController < ApplicationController
     end
     
     # Iterate through just the ones that were "selected"
-    for i in 0..@selected.length
+    for i in 0..@selected[:names].split(/["]/).length
       new = ClassHistory.new
       new.email = @user.email
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
-      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/ /)[i]
+      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
       new.save
     end
 
@@ -92,8 +92,9 @@ class CoursesController < ApplicationController
     @classes_taken = ClassHistory.where(email: current_user.email)
     @classes_required = CSCI.all
         
+    # Need to fix this as well    
     @classes_taken.each do |item|
-      @classes_required.delete(item)
+      @classes_required.delete(item.crn)
     end
   end
   
