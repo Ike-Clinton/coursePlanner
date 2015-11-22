@@ -24,3 +24,10 @@ Scenario: Logging in as a returning advisor
 	When I fill in "session_email" with "mv@citadel.edu"
 	And I press Submit
 	Then I should be on the Course Planner Advisor page
+	
+Scenario: Incorrect Login Credentials
+  Given I am on the Course Planner Login page
+  When I fill in "session_email" with "doesnt@exist.com"
+  And I press Submit
+  Then I should be on the Course Planner Login page
+  And I should see "Incorrect username/password"

@@ -18,7 +18,7 @@ Feature: View Student Course Plans as an Advisor
   Then I should be on the Course Planner Advisor page
   
   Given the following classes history exists
-  | email                | class_name| crn   |
+  | email                | class_name                          | crn |
   | iclinton@citadel.edu | Introduction to Computer Science I  | 201 |
 	
 Scenario: Logging in as an Advisor to view student plan
@@ -27,3 +27,5 @@ Scenario: Logging in as an Advisor to view student plan
     When I follow Ike Clinton
     Then I should be on the Course Planner View Student page
     Then I should see "Introduction to Computer Science I"
+    When I follow Advisor
+    Then I should be on the Course Planner Advisor page
