@@ -68,7 +68,7 @@ class CoursesController < ApplicationController
     end
     
     # Iterate through just the ones that were "selected"
-    for i in 0..@selected[:names].split(/["]/).length
+    for i in 0..@selected[:names].split(/["]/).length-1
       new = ClassHistory.new
       new.email = @user.email
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
