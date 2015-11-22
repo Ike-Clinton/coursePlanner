@@ -19,8 +19,8 @@ class CoursesController < ApplicationController
   
   # Action for submitting the register form
   def submit_register_user
-    # Handle the register_user part of the form
-    if User.find_by email: params[:email]
+    # Make sure user doesn't already exist before registering
+    if User.exists?(:email => params[:user][:email])
       flash[:warning] = "User already exists!"
       redirect_to "/register_user" and return
     end
