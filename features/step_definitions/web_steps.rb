@@ -62,4 +62,12 @@ Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|
     assert page.has_no_xpath?('//*', :text => regexp)
   end
 end
+
+When /^(?:|I )check "([^"]*)"$/ do |field|
+  check(field)
+end
+
+When /^(?:|I )uncheck "([^"]*)"$/ do |field|
+  uncheck(field)
+end
   

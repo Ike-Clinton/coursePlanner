@@ -1,4 +1,4 @@
-Feature: Registering A New user
+Feature: Registering A New Student
   As a new student when I click register, 
   Then I should be taken to the new user page
   So that I can register for an account
@@ -16,5 +16,8 @@ Scenario: Registering as a new student to record classes
   When I fill in "user_is_advisor" with "false"
   And I press Submit
   Then I should be on the Course Planner Class Registration page
-  # TODO: Add a line that checks that the user was created successfully
+  When I check "classes[c1][]"
+  And I check "classes[c2][]"
+  And I press Submit
+  Then I should be on the Course Planner Student page
 

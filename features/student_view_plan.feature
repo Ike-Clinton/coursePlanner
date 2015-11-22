@@ -9,7 +9,6 @@ Feature: View my course plan as a student
   | email                   | name | academic_class | is_advisor |
   | iclinton@citadel.edu    | Ike  | 1a             | false      |  
   
-  
   Given I am on the Course Planner Login page
   When I fill in "session_email" with "iclinton@citadel.edu"
   And I press Submit

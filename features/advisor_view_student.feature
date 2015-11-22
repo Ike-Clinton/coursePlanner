@@ -4,7 +4,7 @@ Feature: View Student Course Plans as an Advisor
   and give them guidance on their plan,
   so that I can help them plan classes for next semester
   
-  Background: The user iclinton@citadel.edu has already registered
+  Background: The users mv@citadel.edu, and iclinton@citadel.edu have already registered
     
   Given the following user exists
   | email                   | name        | academic_class | is_advisor |
