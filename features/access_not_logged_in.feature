@@ -14,6 +14,9 @@ Scenario: Navigating to the Advisor page not logged in
 	When I follow Advisor
 	Then I should be on the Course Planner Index page
 	And I should see "You must be logged in to do that!"
+	Given I am on the Course Planner View Student page
+	Then I should be on the Course Planner Index page
+	Then I should see "You must be logged in to do that!"
 	
 Scenario: A logged in student tries to access the advisor page
   Given the following user exists
@@ -27,4 +30,10 @@ Scenario: A logged in student tries to access the advisor page
   When I follow Advisor
   Then I should be on the Course Planner Index page
   And I should see "You must be an advisor to do that!"
+	Given I am on the Course Planner View Student page
+	Then I should be on the Course Planner Index page
+	Then I should see "You must be an advisor to do that!"
+  
+  
+  
 	
