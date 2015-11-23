@@ -5,7 +5,7 @@
     %tr
       %th From user
       %th Body
-      %th Student
+      %th User_id
       %th
       %th
       %th
@@ -15,7 +15,7 @@
       %tr
         %td= comment.from_user
         %td= comment.body
-        %td= comment.student_id
+        %td= comment.user_id
         %td= link_to 'Show', comment
         %td= link_to 'Edit', edit_comment_path(comment)
         %td= link_to 'Destroy', comment, :method => :delete, :data => { :confirm => 'Are you sure?' }

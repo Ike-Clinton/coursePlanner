@@ -5,6 +5,7 @@ ruby '2.2.2'
 gem 'rails', '4.2.1'
 gem 'haml-rails'
 gem 'static_model'
+gem 'foreigner'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

@@ -1,19 +1,17 @@
-= form_for @comment do |f|
-  - if @comment.errors.any?
+= form_for @comments do |f|
+  - if @comments.errors.any?
     #error_explanation
       %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
       %ul
-        - @comment.errors.full_messages.each do |msg|
+        - @comments.errors.full_messages.each do |msg|
           %li= msg
 
   .field
     = f.label :from_user
     = f.text_field :from_user
+    = f.hidden_field :user_id
   .field
     = f.label :body
     = f.text_area :body
-  .field
-    = f.label :student_id
-    = f.number_field :student_id
   .actions
     = f.submit 'Save'
