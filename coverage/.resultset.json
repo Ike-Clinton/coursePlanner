@@ -85,11 +85,16 @@
         null,
         null,
         1,
+        11,
+        11,
+        1,
+        1,
         null,
-        11,
-        11,
-        1,
-        1,
+        10,
+        0,
+        0,
+        null,
+        10,
         null,
         10,
         10,
@@ -196,6 +201,10 @@
         1,
         null
       ],
+      "/home/ubuntu/workspace/coursePlanner/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
       "/home/ubuntu/workspace/coursePlanner/app/helpers/courses_helper.rb": [
         1,
         null,
@@ -220,6 +229,7 @@
         null
       ],
       "/home/ubuntu/workspace/coursePlanner/app/models/user.rb": [
+        1,
         1,
         null
       ],
@@ -259,6 +269,11 @@
         null,
         null
       ],
+      "/home/ubuntu/workspace/coursePlanner/app/models/comment.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/ubuntu/workspace/coursePlanner/app/models/class_history.rb": [
         1,
         null
@@ -270,7 +285,7 @@
         null
       ]
     },
-    "timestamp": 1448221674
+    "timestamp": 1448265197
   },
   "RSpec": {
     "coverage": {
