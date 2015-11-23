@@ -86,6 +86,10 @@ class CoursesController < ApplicationController
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
+    unless @user.is_advisor == 'false'
+      flash[:warning] = "You are too old to be a student!"
+      redirect_to "/advisor" and return
+    end
     @comment = @user.comments.new
     
     @classes_taken = ClassHistory.where(email: current_user.email)

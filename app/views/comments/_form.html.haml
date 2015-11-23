@@ -7,11 +7,10 @@
           %li= msg
 
   .field
-    = f.label :from_user
+    = f.label :Email
     = f.text_field :from_user
     = f.hidden_field :user_id
   .field
-    = f.label :body
     = f.text_area :body
   .actions
     = f.submit 'Save'

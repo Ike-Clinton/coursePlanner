@@ -3,7 +3,12 @@ class CommentsController < ApplicationController
 
   # GET /comments
   def index
-    @comments = Comment.all
+    @user = current_user
+    unless @user
+      flash[:warning] = "You must be logged in to do that!"
+      redirect_to "/index" and return
+    end
+    @comments = Comment.where(from_user: current_user.email)
   end
 
   # GET /comments/1
