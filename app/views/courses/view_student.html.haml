@@ -33,3 +33,19 @@ And these are the classes he/she needs to take to graduate:
       %tr
         %td= classItem.class_name
         %td= classItem.crn
+        
+        %p
+  %h1 Comments
+  %table#comments
+  %p
+  %tbody
+  - @user.comments.each do |comment|
+    %div
+      %strong From:
+      %strong= comment.from_user
+      %br/
+      %p
+        = comment.body
+      %p
+%strong Add a Comment
+= render 'comments/form'

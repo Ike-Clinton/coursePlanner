@@ -129,6 +129,7 @@ class CoursesController < ApplicationController
     # Reference to logged in user
     @user = current_user
     @my_student = User.find_by(email: params[:user])
+    @comment = @user.comments.new
     # User must be logged in to visit this page (valid token in session)
     unless @user
       flash[:warning] = "You must be logged in to do that!"
