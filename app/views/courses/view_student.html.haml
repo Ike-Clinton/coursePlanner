@@ -8,7 +8,7 @@ Here are the classes #{@name} has taken:
 
 %p
 If you would like to add more classes to this student's plan, please click
-= link_to 'Here', '/register_classes'
+= link_to 'Here', '/advisor_add_classes?user=' << @my_student.email
 
 %table#classes
   %head

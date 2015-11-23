@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  # TODO: Clean up some pieces of code that aren't necessary
   #Necessary for accessing parameters in the view, etc  
   def courses_params
     params.require(:user).permit(:email, :name, :academic_class, :is_advisor)
@@ -127,6 +128,7 @@ class CoursesController < ApplicationController
   def view_student
     # Reference to logged in user
     @user = current_user
+    @my_student = User.find_by(email: params[:user])
     # User must be logged in to visit this page (valid token in session)
     unless @user
       flash[:warning] = "You must be logged in to do that!"
@@ -155,6 +157,52 @@ class CoursesController < ApplicationController
       end
     end
     
+  end
+  
+  def submit_advisor_add_classes
+    # grab a reference to the user who just registered/logged in
+    @user = current_user
+    @my_student = User.find_by(email: params[:user])
+    unless @user
+      flash[:warning] = "You must be logged in to do that!"
+      redirect_to "/index" and return
+    end
+    # Classes is a hash of all the checkbox form data
+    @classes = params[:classes]
+    # Each element in @classes is of the form:
+    # c1"=>["0", "{:name=>\"Programming Languages\", :crn=>\"355\"}"]
+    # Store all of the boxes that were checked
+    @selected = {}
+    @selected[:names] = ""
+    @selected[:crns] = ""
+    
+    # Iterate through all the checkbox param data
+    count = 0 # counter for loop
+    @classes.each do |checkbox_array|
+      checkbox_array.each do |checkbox|
+        if !checkbox[1].nil? # if left unchecked
+          # Returns {:name=>\"Programming Languages\"
+          @selected[:names] << checkbox[1].split(/,/)[0].to_s.gsub(/\d*{:name[{:=>\\"]*/, '').gsub(/\\"/, '*').gsub(/\d*/, '') << '' # Need to figure out what this regex should be
+          # Returns  :crn=>\"355\"}
+          @selected[:crns] << checkbox[1].split(/,/)[1].to_s.gsub(/[{:crn=>\\"]*/, '').gsub(/[}]/, '')
+        end
+      end
+    end
+    
+    # Iterate through just the ones that were "selected"
+    for i in 0..@selected[:names].split(/["]/).length-1
+      new = ClassHistory.new
+      new.email = user_email = params[:user]
+      new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
+      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
+      new.save
+    end
+
+    redirect_to "/advisor"
+  end
+  
+  def advisor_add_classes
+    @my_student = User.find_by(email: params[:user])
   end
   
     
