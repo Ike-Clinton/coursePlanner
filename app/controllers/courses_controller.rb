@@ -198,7 +198,7 @@ class CoursesController < ApplicationController
       new.save
     end
 
-    redirect_to "/advisor"
+    redirect_to "/view_student?user=" << @my_student.email
   end
   
   def advisor_add_classes
