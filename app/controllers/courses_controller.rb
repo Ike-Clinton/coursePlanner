@@ -86,8 +86,7 @@ class CoursesController < ApplicationController
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
-    @comments = @user.comments.all
-    @comments = @user.comments.build
+    @comment = @user.comments.new
     
     @classes_taken = ClassHistory.where(email: current_user.email)
     @classes_required = CSCI.all

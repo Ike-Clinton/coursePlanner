@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :comments
-  resources :comments
   get 'sessions/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
