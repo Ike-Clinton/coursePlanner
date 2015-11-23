@@ -30,3 +30,11 @@ And these are the classes you need to take to graduate:
       %tr
         %td= classItem.class_name
         %td= classItem.crn
+        
+%h3
+  - @comments.each do |comment|
+    %tr
+      %td= comment.to_user
+      %td= comment.from_user
+      %td= comment.body
+      %td= link_to 'Delete', '/comment', method: :delete, data: { confirm: 'Are you sure?' }
