@@ -74,6 +74,8 @@ class CoursesController < ApplicationController
       new.email = @user.email
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
       new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
+      new.pre_reqs = CSCI.find_by(crn: new.crn).pre_reqs
+      pre_reqs = 
       new.save
     end
 
@@ -128,13 +130,14 @@ class CoursesController < ApplicationController
   def view_student
     # Reference to logged in user
     @user = current_user
-    @my_student = User.find_by(email: params[:user])
-    @comment = @user.comments.new
-    # User must be logged in to visit this page (valid token in session)
     unless @user
       flash[:warning] = "You must be logged in to do that!"
       redirect_to "/index" and return
     end
+    @my_student = User.find_by(email: params[:user])
+    @comment = @user.comments.new
+    # User must be logged in to visit this page (valid token in session)
+
     
     # Only lets advisors access this page
     unless @user.is_advisor == 'true'
