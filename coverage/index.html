@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-05T17:45:48+00:00">2015-12-05T17:45:48+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-05T18:53:34+00:00">2015-12-05T18:53:34+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">78.29%</span></span>
+    (<span class="covered_percent"><span class="red">80.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.24
+         10.37
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>11</b> files in total.
-    <b>152</b> relevant lines. 
-    <span class="green"><b>119</b> lines covered</span> and
-    <span class="red"><b>33</b> lines missed </span>
+    <b>150</b> relevant lines. 
+    <span class="green"><b>120</b> lines covered</span> and
+    <span class="red"><b>30</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#cd688e1a11b126fe8162beca7a21a2ab1024a7f2" class="src_link" title="app/controllers/courses_controller.rb">app/controllers/courses_controller.rb</a></td>
-        <td class="red strong">72.65 %</td>
+        <td class="red strong">74.78 %</td>
         <td>254</td>
-        <td>117</td>
-        <td>85</td>
-        <td>32</td>
-        <td>10.9</td>
+        <td>115</td>
+        <td>86</td>
+        <td>29</td>
+        <td>12.4</td>
       </tr>
       
       <tr>
@@ -169,20 +169,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">75.74%</span></span>
+    (<span class="covered_percent"><span class="red">77.61%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.78
+         11.05
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>3</b> files in total.
-    <b>136</b> relevant lines. 
-    <span class="green"><b>103</b> lines covered</span> and
-    <span class="red"><b>33</b> lines missed </span>
+    <b>134</b> relevant lines. 
+    <span class="green"><b>104</b> lines covered</span> and
+    <span class="red"><b>30</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -210,12 +210,12 @@
       
       <tr>
         <td class="strong"><a href="#cd688e1a11b126fe8162beca7a21a2ab1024a7f2" class="src_link" title="app/controllers/courses_controller.rb">app/controllers/courses_controller.rb</a></td>
-        <td class="red strong">72.65 %</td>
+        <td class="red strong">74.78 %</td>
         <td>254</td>
-        <td>117</td>
-        <td>85</td>
-        <td>32</td>
-        <td>10.9</td>
+        <td>115</td>
+        <td>86</td>
+        <td>29</td>
+        <td>12.4</td>
       </tr>
       
       <tr>
@@ -534,11 +534,11 @@
         <div class="source_table" id="cd688e1a11b126fe8162beca7a21a2ab1024a7f2">
   <div class="header">
     <h3>app/controllers/courses_controller.rb</h3>
-    <h4><span class="red">72.65 %</span> covered</h4>
+    <h4><span class="red">74.78 %</span> covered</h4>
     <div>
-      <b>117</b> relevant lines. 
-      <span class="green"><b>85</b> lines covered</span> and
-      <span class="red"><b>32</b> lines missed.</span>
+      <b>115</b> relevant lines. 
+      <span class="green"><b>86</b> lines covered</span> and
+      <span class="red"><b>29</b> lines missed.</span>
     </div>
   </div>
   
@@ -998,7 +998,7 @@
         <li class="covered" data-hits="4" data-linenumber="76">
           <span class="hits">4</span>
           
-          <code class="ruby">      new.crn = @selected[:crns].nil? ? &#39;empty&#39; : @selected[:crns].split(/-/)[i]</code>
+          <code class="ruby">      new.crn = @selected[:crns].nil? ? &#39;empty&#39; : @selected[:crns].split(/\s/)[i+1]</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="77">
@@ -1007,10 +1007,10 @@
           <code class="ruby">      course = CSCI.find_by_crn(new.crn)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="78">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="78">
           
-          <code class="ruby">      puts new.crn</code>
+          
+          <code class="ruby">      </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
@@ -1031,8 +1031,8 @@
           <code class="ruby">        # If the course has pre_reqs</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="82">
-          
+        <li class="covered" data-hits="3" data-linenumber="82">
+          <span class="hits">3</span>
           
           <code class="ruby">        if !course.pre_reqs.nil?</code>
         </li>
@@ -1058,61 +1058,61 @@
         <li class="missed" data-hits="0" data-linenumber="86">
           
           
-          <code class="ruby">          count = 0</code>
+          <code class="ruby">          new.pre_reqs.split(/,/).each do |req|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="87">
           
           
-          <code class="ruby">          new.pre_reqs.split(/,/).each do |req|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="88">
-          
-          
           <code class="ruby">            if @classes_taken.find_by(crn: req)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby">              # TODO add a counter here to make sure ALL reqs are met not just one</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="90">
+        <li class="missed" data-hits="0" data-linenumber="89">
           
           
           <code class="ruby">              new.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="94">
-          
+        <li class="covered" data-hits="3" data-linenumber="93">
+          <span class="hits">3</span>
           
           <code class="ruby">      new.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
@@ -1265,20 +1265,20 @@
           <code class="ruby">    @classes_taken.each do |item|</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="121">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="121">
+          <span class="hits">12</span>
           
           <code class="ruby">      @classes_required.each do |item2|</code>
         </li>
       
-        <li class="covered" data-hits="459" data-linenumber="122">
-          <span class="hits">459</span>
+        <li class="covered" data-hits="599" data-linenumber="122">
+          <span class="hits">599</span>
           
           <code class="ruby">        if item.class_name == item2.class_name</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="123">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="123">
+          <span class="hits">3</span>
           
           <code class="ruby">            @classes_required.delete(item2)</code>
         </li>

@@ -73,9 +73,9 @@ class CoursesController < ApplicationController
       new = ClassHistory.new
       new.email = @user.email
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
-      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/" "/)[i]
+      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/\s/)[i+1]
       course = CSCI.find_by_crn(new.crn)
-      puts new.crn
+      
       # If the course lookup succeeds
       if !course.nil?
         # If the course has pre_reqs
@@ -83,7 +83,6 @@ class CoursesController < ApplicationController
           # Grab the list of pre_reqs we found
           new.pre_reqs = course.pre_reqs
           # Iterate through the csv list (most have just one)
-          count = 0
           new.pre_reqs.split(/,/).each do |req|
             if @classes_taken.find_by(crn: req)
               # TODO add a counter here to make sure ALL reqs are met not just one
@@ -93,6 +92,7 @@ class CoursesController < ApplicationController
         end
       new.save
       end
+
       
 
     end
