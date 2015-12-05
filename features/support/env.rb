@@ -35,9 +35,22 @@ ActionController::Base.allow_rescue = false
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
+  require 'database_cleaner'
+  require 'database_cleaner/cucumber'
+  # DatabaseCleaner.strategy = :transaction
   DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.clean_with :truncation
+  
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+Before do
+  DatabaseCleaner.start
+end
+
+After do |scenario|
+  DatabaseCleaner.clean
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.

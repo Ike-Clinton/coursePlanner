@@ -15,10 +15,10 @@ Feature: View my current classes as a student
   
   Given the following classes history exists
   | email                | class_name | crn   |
-  | iclinton@citadel.edu | CSCI 201   | 12345 |
-  | iclinton@citadel.edu | CSCI 202   | 12344 |
-  | iclinton@citadel.edu | CSCI 223   | 78901 |
-  | iclinton@citadel.edu | CSCI 405   | 12334 |
+  | iclinton@citadel.edu | CSCI-201   | 12345 |
+  | iclinton@citadel.edu | CSCI-202   | 12344 |
+  | iclinton@citadel.edu | CSCI-223   | 78901 |
+  | iclinton@citadel.edu | CSCI-405   | 12334 |
 	
 Scenario: View my current course history
     Given I am on the Course Planner Student page

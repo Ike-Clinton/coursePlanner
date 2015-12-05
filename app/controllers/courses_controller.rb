@@ -77,9 +77,9 @@ class CoursesController < ApplicationController
       course = CSCI.find_by_crn(new.crn)
       
       # If the course lookup succeeds
-      if !course.nil?
+      if course.nil? == false
         # If the course has pre_reqs
-        if !course.pre_reqs.nil?
+        if course.pre_reqs.nil? == false
           # Grab the list of pre_reqs we found
           new.pre_reqs = course.pre_reqs
           # Iterate through the csv list (most have just one)
@@ -87,12 +87,15 @@ class CoursesController < ApplicationController
             if @classes_taken.find_by(crn: req)
               # TODO add a counter here to make sure ALL reqs are met not just one
               new.save
+            else
+              flash[:warning] = "You do not meet one or more of the pre-requisites for one of the classes you attempted to register for!"
             end
           end
+        else
+          new.save
         end
-      new.save
       end
-
+      
       
 
     end
