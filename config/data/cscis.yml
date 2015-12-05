@@ -8,7 +8,7 @@
   crn: CSCI 201
   pre_reqs:
 - id: 3
-  class_name: A Modern Language
+  class_name: A Modern Language I
   crn: LANG 101
   pre_reqs:
 - id: 4
@@ -30,7 +30,7 @@
 - id: 8
   class_name: A Modern Language II
   crn: LANG 102
-  pre_reqs:LANG 101
+  pre_reqs: LANG 101
 - id: 9
   class_name: Social Science Core Course
   crn: SSC 101
@@ -38,7 +38,7 @@
 - id: 10
   class_name: Introduction to Computer Science II
   crn: CSCI 202
-  pre_reqs:CSCI 201
+  pre_reqs: CSCI 201
 - id: 11
   class_name: Analytic Geometry and Calculus II
   crn: MATH 132

@@ -74,16 +74,22 @@ class CoursesController < ApplicationController
       new = ClassHistory.new
       new.email = @user.email
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
-      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
-      new.pre_reqs = CSCI.find_by(crn: new.crn).pre_reqs
+      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/-/)[i]
+      course = CSCI.find_by_crn(new.crn)
+      if !course.nil?
+        if !course.pre_reqs.nil?
+          new.pre_reqs = course.pre_reqs
       
-      new.pre_reqs.split(/,/).each do |req|
-        unless(@classes_taken.find_by(crn: req))
-           
+      
+          new.pre_reqs.split(/,/).each do |req|
+            if(@classes_taken.find_by(crn: req))
+              new.save
+            end
+          end
+          # Saving here breaks code, course is always nil
         else
           new.save
         end
-        
       end
     end
 

@@ -23,7 +23,7 @@ Scenario: Registering as a new student to record classes
   And I check "classes[c2][]"
   And I press Submit
   Then I should be on the Course Planner Student page
-  And I should see "Class	Class Number Composition and Literature I	101 Introduction to Computer Science I	201"
+  And I should see "Class	Class Number Composition and Literature I	ENGL 101 Introduction to Computer Science I	CSCI 201"
   And I should see "And these are the classes you need to take to graduate: Class	Class Number A Modern Language"
 
 Scenario: Attempt to register a user that already exists

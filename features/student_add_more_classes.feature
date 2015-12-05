@@ -10,8 +10,8 @@ Background: Iclinton has already registered and has registered the first two cla
 
   Given the following classes history exists
   | email                | class_name | crn   |
-  | iclinton@citadel.edu | Composition and Literature I   | 101 |
-  | iclinton@citadel.edu | Introduction to Computer Science I   | 201 |
+  | iclinton@citadel.edu | Composition and Literature I   | ENGL 101 |
+  | iclinton@citadel.edu | Introduction to Computer Science I   | CSCI 201 |
     
   Given I am on the Course Planner Login page
   When I fill in "session_email" with "iclinton@citadel.edu"
@@ -25,6 +25,6 @@ Scenario: Add more classes to student plan
   When I check "classes[c4][]"
   And I press Submit
   Then I should be on the Course Planner Student page
-  And I should see "Here are the classes you have taken Class	Class Number Composition and Literature I	101 Introduction to Computer Science I	201 A Modern Language 101 Analytic Geometry and Calculus I"
+  And I should see "Here are the classes you have taken Class	Class Number Composition and Literature I	ENGL 101 Introduction to Computer Science I	CSCI 201 A Modern Language I LANG 101 Analytic Geometry and Calculus I MATH 131"
   
 
