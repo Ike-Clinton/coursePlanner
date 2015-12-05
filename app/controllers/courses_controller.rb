@@ -77,7 +77,7 @@ class CoursesController < ApplicationController
       new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
       new.pre_reqs = CSCI.find_by(crn: new.crn).pre_reqs
       
-      new.pre_reqs.split(" ").each do |req|
+      new.pre_reqs.split(/,/).each do |req|
         unless(@classes_taken.find_by(crn: req))
            
         else
