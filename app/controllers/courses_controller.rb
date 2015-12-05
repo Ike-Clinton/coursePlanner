@@ -57,7 +57,6 @@ class CoursesController < ApplicationController
     @selected[:crns] = ""
     
     # Iterate through all the checkbox param data
-    count = 0 # counter for loop
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
         if !checkbox[1].nil? # if left unchecked
@@ -76,21 +75,26 @@ class CoursesController < ApplicationController
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
       new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/-/)[i]
       course = CSCI.find_by_crn(new.crn)
+      puts new.crn
+      # If the course lookup succeeds
       if !course.nil?
+        # If the course has pre_reqs
         if !course.pre_reqs.nil?
+          # Grab the list of pre_reqs we found
           new.pre_reqs = course.pre_reqs
-      
-      
+          # Iterate through the csv list (most have just one)
+          count = 0
           new.pre_reqs.split(/,/).each do |req|
-            if(@classes_taken.find_by(crn: req))
+            if @classes_taken.find_by(crn: req)
+              # TODO add a counter here to make sure ALL reqs are met not just one
               new.save
             end
           end
-          # Saving here breaks code, course is always nil
-        else
-          new.save
         end
+      new.save
       end
+      
+
     end
 
     redirect_to "/student"
@@ -195,7 +199,6 @@ class CoursesController < ApplicationController
     @selected[:crns] = ""
     
     # Iterate through all the checkbox param data
-    count = 0 # counter for loop
     @classes.each do |checkbox_array|
       checkbox_array.each do |checkbox|
         if !checkbox[1].nil? # if left unchecked
@@ -210,7 +213,7 @@ class CoursesController < ApplicationController
     # Iterate through just the ones that were "selected"
     for i in 0..@selected[:names].split(/["]/).length-1
       new = ClassHistory.new
-      new.email = user_email = params[:user]
+      new.email = params[:user]
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
       new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
       new.save
