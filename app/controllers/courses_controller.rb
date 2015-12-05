@@ -46,6 +46,7 @@ class CoursesController < ApplicationController
   def submit_register_classes
     # grab a reference to the user who just registered/logged in
     @user = current_user
+    @classes_taken = ClassHistory.where(email: current_user.email)
     # Classes is a hash of all the checkbox form data
     @classes = params[:classes]
     # Each element in @classes is of the form:
@@ -75,8 +76,15 @@ class CoursesController < ApplicationController
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
       new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split()[i]
       new.pre_reqs = CSCI.find_by(crn: new.crn).pre_reqs
-      pre_reqs = 
-      new.save
+      
+      new.pre_reqs.split(" ").each do |req|
+        unless(@classes_taken.find_by(crn: req))
+           
+        else
+          new.save
+        end
+        
+      end
     end
 
     redirect_to "/student"
