@@ -73,7 +73,7 @@ class CoursesController < ApplicationController
       new = ClassHistory.new
       new.email = @user.email
       new.class_name = @selected[:names].nil? ? 'empty' : @selected[:names].split(/["]/)[i]
-      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/-/)[i]
+      new.crn = @selected[:crns].nil? ? 'empty' : @selected[:crns].split(/" "/)[i]
       course = CSCI.find_by_crn(new.crn)
       puts new.crn
       # If the course lookup succeeds

@@ -1,127 +1,127 @@
 ---
 - id: 1
   class_name: Composition and Literature I
-  crn: ENGL 101
+  crn: ENGL-101
   pre_reqs:
 - id: 2
   class_name: Introduction to Computer Science I
-  crn: CSCI 201
+  crn: CSCI-201
   pre_reqs:
 - id: 3
   class_name: A Modern Language I
-  crn: LANG 101
+  crn: LANG-101
   pre_reqs:
 - id: 4
   class_name: Analytic Geometry and Calculus I
-  crn: MATH 131
+  crn: MATH-131
   pre_reqs:
 - id: 5
   class_name: First Year Basic ROTC I
-  crn: ROTC 101
+  crn: ROTC-101
   pre_reqs:
 - id: 6
   class_name: Required Physical Education Part I
-  crn: RPED 101
+  crn: RPED-101
   pre_reqs:
 - id: 7
   class_name: Composition and Literature II
-  crn: ENGL 102
+  crn: ENGL-102
   pre_reqs: ENGL 101
 - id: 8
   class_name: A Modern Language II
-  crn: LANG 102
+  crn: LANG-102
   pre_reqs: LANG 101
 - id: 9
   class_name: Social Science Core Course
-  crn: SSC 101
+  crn: SSC-101
   pre_reqs:
 - id: 10
   class_name: Introduction to Computer Science II
-  crn: CSCI 202
+  crn: CSCI-202
   pre_reqs: CSCI 201
 - id: 11
   class_name: Analytic Geometry and Calculus II
-  crn: MATH 132
+  crn: MATH-132
   pre_reqs: MATH 131
 - id: 12
   class_name: First Year Basic ROTC II
-  crn: ROTC 102
+  crn: ROTC-102
   pre_reqs: ROTC 101
 - id: 13
   class_name: Required Physical Education Part II
-  crn: RPED 201
+  crn: RPED-201
   pre_reqs: RPED 101
 - id: 14
   class_name: Major British Writers
-  crn: ENGL 201
+  crn: ENGL-201
   pre_reqs: ENGL 102
 - id: 15
   class_name: A Modern Language
-  crn: LANG 201
+  crn: LANG-201
   pre_reqs: LANG 102
 - id: 16
   class_name: Computer Organization and Programming
-  crn: CSCI 305
+  crn: CSCI-305
   pre_reqs: CSCI 201
 - id: 17
   class_name: Introduction to Discrete Structures
-  crn: MATH 206
+  crn: MATH-206
   pre_reqs: MATH 131
 - id: 18
   class_name: Biology Chemistry or Physics
-  crn: BCP 101
+  crn: BCP-101
   pre_reqs:
 - id: 19
   class_name: Second Year Basic ROTC I
-  crn: ROTC 201
+  crn: ROTC-201
   pre_reqs: ROTC 102
 - id: 20
   class_name: Required Physical Education Part III
-  crn: RPED 301
+  crn: RPED-301
   pre_reqs: RPED 201
 - id: 21
   class_name: Sophmore Seminar Part I
-  crn: LDRS 201
+  crn: LDRS-201
   pre_reqs:
 - id: 22
   class_name: Sophmore Seminar Part II
-  crn: LDRS 211
+  crn: LDRS-211
   pre_reqs:
 - id: 23
   class_name: English American or World Literature
-  crn: ENGL 202
+  crn: ENGL-202
   pre_reqs: ENGL 201
 - id: 24
   class_name: Biology Chemistry or Physics Part II
-  crn: BCP 102
+  crn: BCP-102
   pre_reqs: BCP 101
 - id: 25
   class_name: A Modern Language IV
-  crn: ENGL 202
+  crn: ENGL-202
   pre_reqs: LANG 201
 - id: 26
   class_name: Data Structures and Algorithms
-  crn: CSCI 223
+  crn: CSCI-223
   pre_reqs: MATH 206, CSCI 202
 - id: 27
   class_name: Second Year Basic ROTC II
-  crn: ROTC 201
+  crn: ROTC-201
   pre_reqs: ROTC 102
 - id: 28
   class_name: Required Physical Education Part IV
-  crn: RPED 401
+  crn: RPED-401
   pre_reqs: RPED 301
 - id: 29
   class_name: Database Design
-  crn: CSCI 320
+  crn: CSCI-320
   pre_reqs: CSCI 202
 - id: 30
   class_name: Computer Organization and Programming
-  crn: CSCI 305
+  crn: CSCI-305
   pre_reqs: CSCI 201
 - id: 31
   class_name: Biology Chemistry or Physics Part III
-  crn: BCP 201
+  crn: BCP-201
   pre_reqs: BCP 102
 - id: 32
   class_name: Elective
@@ -129,47 +129,47 @@
   pre_reqs:
 - id: 33
   class_name: First Year Advanced ROTC II
-  crn: ROTC 302
+  crn: ROTC-302
   pre_reqs: ROTC 301
 - id: 34
   class_name: Junior Ethics Enrichment Experience
-  crn: LDRS 311
+  crn: LDRS-311
   pre_reqs:
 - id: 35
   class_name: Programming Languages
-  crn: CSCI 355
+  crn: CSCI-355
   pre_reqs: CSCI 223
 - id: 36
   class_name: Computer Networks and Internets
   crn: CSCI 317
-  pre_reqs: CSCI 304
+  pre_reqs: CSCI-304
 - id: 37
   class_name: Approved Elective
   crn: A1
   pre_reqs:
 - id: 38
   class_name: Introduction to Probability and Statistics
-  crn: STAT 361
+  crn: STAT-361
   pre_reqs: MATH 131
 - id: 39
   class_name: Biology Chemistry or Physics Part IV
-  crn: BCP 202
+  crn: BCP-202
   pre_reqs: BCP 201
 - id: 40
   class_name: Operating Systems
-  crn: CSCI 405
+  crn: CSCI-405
   pre_reqs: CSCI 223, CSCI 305
 - id: 41
   class_name: Software Engineering
-  crn: CSCI 420
+  crn: CSCI-420
   pre_reqs: CSCI 223
 - id: 42
   class_name: Senior Seminar in Computer Science
-  crn: CSCI 495
+  crn: CSCI-495
   pre_reqs:
 - id: 43
   class_name: Digital Logic and Circuits
-  crn: ELEC 311
+  crn: ELEC-311
   pre_reqs:
 - id: 44
   class_name: Elective II
@@ -178,19 +178,19 @@
 - id: 45
   class_name: Second Year Advanced ROTC I
   crn: ROTC 401
-  pre_reqs: ROTC 302
+  pre_reqs: ROTC-302
 - id: 46
   class_name: Senior Leadership Integration Seminar
-  crn: LDRS 411
+  crn: LDRS-411
   pre_reqs:
 - id: 47
   class_name: Software Engineering Praticum
   crn: CSCI 421
-  pre_reqs: CSCI 420
+  pre_reqs: CSCI-420
 - id: 48
   class_name: Digital Systems Engineering
   crn: ELEC 330
-  pre_reqs: ELEC 311
+  pre_reqs: ELEC-311
 - id: 49
   class_name: Approved Elective II
   crn: A2
@@ -205,9 +205,9 @@
   pre_reqs:
 - id: 52
   class_name: Second Year Advanced ROTC II
-  crn: ROTC 402
+  crn: ROTC-402
   pre_reqs: ROTC 401
 - id: 54
   class_name: First Year Advanced ROTC I
-  crn: ROTC 301
+  crn: ROTC-301
   pre_reqs: ROTC 202
