@@ -23,7 +23,7 @@ Scenario: Registering as a new student to record classes
   And I press Submit
   Then I should be on the Course Planner Student page
   And I should see "Composition and Literature I	ENGL-101"
-  And I should see "And these are the classes you need to take to graduate: Class	Class Number Introduction to Computer Science I CSCI-201"
+  And I should see "And these are the classes you need to take to graduate: Class	Class Number A Modern Language I LANG-101"
   
   
 Scenario: Add more classes to student plan  

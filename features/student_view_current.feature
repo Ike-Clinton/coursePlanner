@@ -22,7 +22,7 @@ Feature: View my current classes as a student
 	
 Scenario: View my current course history
     Given I am on the Course Planner Student page
-    Then I should see "CSCI 201"
-    Then I should see "CSCI 202"
-    Then I should see "CSCI 223"
-    Then I should see "CSCI 405"
+    Then I should see "CSCI-201"
+    Then I should see "CSCI-202"
+    Then I should see "CSCI-223"
+    Then I should see "CSCI-405"
