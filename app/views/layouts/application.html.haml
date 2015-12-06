@@ -7,60 +7,61 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
+  %nav
     #wrapper
       #header
-        %h1 Course Planner
-        %h2 Main Page
+        %h1 The Citadel Student Course Planner - CSCI Edition
       #nav
-      %nav.navbar.navbar-default
+      %nav.navbar.navbar-default{:role => "navigation"}
         .container-fluid
           .navbar-header
-          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-          %a.navbar-brand{:href => "#"} Brand
+            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.navbar-brand{:href => "#"} Welcome!
           / Collect the nav links, forms, and other content for toggling
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav{:role => "navigation"}
-            %li.active
-              %a{:href => "index"}
-                Home
-                %span.sr-only (current)
-            %li.active
-              %a{:href => "register_user"}
-                Register
-                %span.sr-only (current)    
-            %li.active
-              %a{:href => "login"}
-                Login
-                %span.sr-only (current)    
-            %li.active
-              %a{:href => "student"}
-                Student
-                %span.sr-only (current)
-            %li.active
-              %a{:href => "advisor"}
-                Advisor
-                %span.sr-only (current)
-            %li.active
-              %a{:href => "comments"}
-                Comments
-                %span.sr-only (current)
-            %li.active
-              %a{:href => "logout"}
-                Logout
-                %span.sr-only (current)
+            %ul.nav.navbar-nav
+              %li.active
+                %a{:href => "index"}
+                  Home
+                  %span.sr-only (current)
+              %li.active
+                %a{:href => "register_user"}
+                  Register
+                  %span.sr-only (current)    
+              %li.active
+                %a{:href => "login"}
+                  Login
+                  %span.sr-only (current)    
+              %li.active
+                %a{:href => "student"}
+                  Student
+                  %span.sr-only (current)
+              %li.active
+                %a{:href => "advisor"}
+                  Advisor
+                  %span.sr-only (current)
+              %li.active
+                %a{:href => "comments"}
+                  Comments
+                  %span.sr-only (current)
+              %li.active
+                %a{:href => "logout"}
+                  Logout
+                  %span.sr-only (current)
         #main
         - if flash[:notice]
           #notice.message= flash[:notice]
         - elsif flash[:warning]
           #warning.message= flash[:warning]
           
-        = yield
+  %body
+    = yield
         
-      #footer
-      %p
-      ©Citadel 1337 Squad
+    #footer
+  %footer
+    %p
+    ©Citadel 1337 Squad
