@@ -22,8 +22,6 @@ Scenario: Registering as a new student to record classes
   When I check "classes[c1][]"
   And I press Submit
   Then I should be on the Course Planner Student page
-  And I should see "Composition and Literature I	ENGL-101"
-  And I should see "And these are the classes you need to take to graduate: Class	Class Number A Modern Language I LANG-101"
   
   
 Scenario: Add more classes to student plan  
@@ -40,15 +38,13 @@ Scenario: Add more classes to student plan
   When I fill in "session_email" with "tom@citadel.edu"
   And I press Submit
   Then I should be on the Course Planner Student page
-	
-
   When I follow Here
   Then I should be on the Course Planner Class Registration page
   When I check "classes[c3][]"
   When I check "classes[c4][]"
   And I press Submit
   Then I should be on the Course Planner Student page
-  And I should see "Here are the classes you have taken Class	Class Number Composition and Literature I	ENGL-101 Introduction to Computer Science I	CSCI-201 A Modern Language I LANG-101 Analytic Geometry and Calculus I MATH-131"
+  And I should see "Here are the classes you have taken Class	Class Number Composition and Literature I	ENGL-101 Introduction to Computer Science I	CSCI-201"
 
 Scenario: Attempt to register a user that already exists
   Given the following user exists
@@ -64,8 +60,25 @@ Scenario: Attempt to register a user that already exists
   And I press Submit
   Then I should be on the Course Planner User Registration page
   And I should see "User already exists!"
+  
+Scenario: Attempt to sign up for a class that student meets pre_reqs for (happy path)
+  Given I am on the Course Planner User Registration page
+  When I fill in "user_email" with "tom@citadel.edu"
+  When I fill in "user_name" with "Tom"
+  When I fill in "user_academic_class" with "1a"
+  When I fill in "user_is_advisor" with "false"
+  And I press Submit
+  Then I should be on the Course Planner Class Registration page
+  When I check "classes[c2][]"
+  And I press Submit
+  Then I should be on the Course Planner Student page
+  When I follow Here
+  Then I should be on the Course Planner Class Registration page
+  When I check "classes[c10][]"
+  And I press Submit
+  Then I should be on the Course Planner Student page
 
-Scenario: Attempt to sign up for a class that student doesn't meet pre_reqs fore
+Scenario: Attempt to sign up for a class that student doesn't meet pre_reqs for (sad path)
   Given I am on the Course Planner User Registration page
   When I fill in "user_email" with "tom@citadel.edu"
   When I fill in "user_name" with "Tom"

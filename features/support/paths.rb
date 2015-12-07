@@ -32,6 +32,8 @@ module NavigationHelpers
         
       when /Course Planner Index page/
         '/index'
+      when /Course Planner Advisor Add Classes page/
+      '/advisor_add_classes'
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
