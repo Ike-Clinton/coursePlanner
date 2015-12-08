@@ -25,5 +25,5 @@ Scenario: Add more classes to student plan
   When I check "classes[c4][]"
   And I press Submit
   Then I should be on the Course Planner View Student page
-  And I should see "Here are the classes Ike has taken: If you would like to add more classes to this student's plan, please click Here  Class	Class Number Composition and Literature I	ENGL-101 Introduction to Computer Science I	CSCI-201 A Modern Language I LANG-101 Analytic Geometry and Calculus I MATH-131"
+  And I should see "Class	Class Number Pre-Requisites Composition and Literature I	ENGL-101 Introduction to Computer Science I	CSCI-201 A Modern Language I LANG-101 Analytic Geometry and Calculus I MATH-131"
   

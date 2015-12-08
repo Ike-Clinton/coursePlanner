@@ -44,7 +44,7 @@ Scenario: Add more classes to student plan
   When I check "classes[c4][]"
   And I press Submit
   Then I should be on the Course Planner Student page
-  And I should see "Here are the classes you have taken Class	Class Number Composition and Literature I	ENGL-101 Introduction to Computer Science I	CSCI-201"
+  And I should see "Here Here are the classes you have taken Class Name Course Number Pre-Requisites Composition and Literature I ENGL-101 Introduction to Computer Science I CSCI-201"
 
 Scenario: Attempt to register a user that already exists
   Given the following user exists
