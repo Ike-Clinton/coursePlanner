@@ -1,8 +1,10 @@
-!!! 5
-%html
+!!!
+%html{:lang => "en"}
   %head
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %title Course Planner!
     %link(rel="stylesheet" href="css/styles.css")
+    %link(rel="stylesheet" href="css/bootstrap.css")
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
