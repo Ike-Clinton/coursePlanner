@@ -9,31 +9,35 @@ Here are the classes you have taken
 
 .container-fluid
   .row
-    .panel
-      .col-xs-2 Class Name
-      .col-xs-2 Course Number
-      .col-xs-2 Pre-Requisites
+    .col-md-6
+      .panel.panel-primary
+        .col-xs-4 Class Name
+        .col-xs-4 Course Number
+        .col-xs-4 Pre-Requisites
   - @classes_taken.each do |classItem|
     .row
-      .panel
-        .col-xs-2= classItem.class_name
-        .col-xs-2= classItem.crn
-        .col-xs-2= classItem.pre_reqs
+      .col-md-6
+        .panel.panel-info
+        .col-xs-4= classItem.class_name
+        .col-xs-4= classItem.crn
+        .col-xs-4= classItem.pre_reqs
       
 %p
 And these are the classes you need to take to graduate:
 .container-fluid
   .row
-    .panel
-      .col-xs-2 Class Name
-      .col-xs-2 Course Number
-      .col-xs-2 Pre-Requisites
+    .col-md-6
+      .panel.panel-primary
+        .col-xs-4 Class Name
+        .col-xs-4 Course Number
+        .col-xs-4 Pre-Requisites
   - @classes_required.each do |classItem|
     .row
-      .panel
-        .col-xs-2= classItem.class_name
-        .col-xs-2= classItem.crn
-        .col-xs-2= classItem.pre_reqs
+      .col-md-6
+        .panel.panel-info
+          .col-xs-4= classItem.class_name
+          .col-xs-4= classItem.crn
+          .col-xs-4= classItem.pre_reqs
         
 %p
   %h1 Comments
