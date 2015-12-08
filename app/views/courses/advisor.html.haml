@@ -1,19 +1,15 @@
-#content
-%h1 The Advisor Page
-%p
-Welcome #{current_user.name}, here are all the students who have complete course plans
-%p
-
-%table#my_students
-  %head
-    %tr
-      %th Name    
-      %th Email
-  %tbody
-    - @my_students.each do |student|
-      %tr
-        %p
-        = link_to student.name, '/view_student?user=' << student.email
-
-
-And these are links to all of their completed plans
+.container-fluid
+  .row
+    .col-md-3.col-md-offset-1
+    #content
+      %h1 The Advisor Page
+      %p
+      Welcome #{current_user.name}, here are all the students who have complete course plans
+      %p
+    
+      .container-fluid
+        .row
+          .col-md-6
+            - @my_students.each do |student|
+              %p
+                = link_to student.name, '/view_student?user=' << student.email

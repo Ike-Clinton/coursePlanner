@@ -1,52 +1,63 @@
-#content
-%h1 The Student View Page
-%p
-
-
-%p
-Here are the classes #{@name} has taken:
-
-%p
-If you would like to add more classes to this student's plan, please click
-= link_to 'Here', '/advisor_add_classes?user=' << @my_student.email
-
-%table#classes
-  %head
-    %tr
-      %th Class    
-      %th Class Number
-  %tbody
-    - @classes_taken.each do |classItem|
-      %tr
-        %td= classItem.class_name
-        %td= classItem.crn
-%p
-And these are the classes he/she needs to take to graduate:
-
-%table#classes_required
-  %head
-    %tr
-      %th Class    
-      %th Class Number
-  %tbody
-    - @classes_required.each do |classItem|
-      %tr
-        %td= classItem.class_name
-        %td= classItem.crn
-        
+.container-fluid
+  .row
+    .col-lg-12.col-md-offset-1
+      #content
+      %h1 The Student View Page
+      %p
+      
+      
+      %p
+      %strong Here are the classes #{@name} has taken:
+      
+      %p
+      If you would like to add more classes to this student's plan, please click
+      = link_to 'Here', '/advisor_add_classes?user=' << @my_student.email
+      
+      .container-fluid
+        .row
+          .col-md-6
+            .panel.panel-primary
+              .col-xs-4 Class Name
+              .col-xs-4 Course Number
+              .col-xs-4 Pre-Requisites
+        - @classes_taken.each do |classItem|
+          .row
+            .col-md-6
+              .panel.panel-info
+              .col-xs-4= classItem.class_name
+              .col-xs-4= classItem.crn
+              .col-xs-4= classItem.pre_reqs
+      %p
+      %strong And these are the classes he/she needs to take to graduate:
+      
+      .container-fluid
+        .row
+          .col-md-6
+            .panel.panel-primary
+              .col-xs-4 Class Name
+              .col-xs-4 Course Number
+              .col-xs-4 Pre-Requisites
+        - @classes_required.each do |classItem|
+          .row
+            .col-md-6
+              .panel.panel-info
+                .col-xs-4= classItem.class_name
+                .col-xs-4= classItem.crn
+                .col-xs-4= classItem.pre_reqs
+              
+              %p
+      %p
+        %h1 Comments
+        %table#comments
         %p
-%p
-  %h1 Comments
-  %table#comments
-  %p
-  %tbody
-  - @user.comments.each do |comment|
-    %div
-      %strong From:
-      %strong= comment.from_user
-      %br/
-      %p
-        = comment.body
-      %p
-%strong Add a Comment
-= render 'comments/form'
+        %tbody
+        - @user.comments.each do |comment|
+          %div
+            %strong From:
+            %strong= comment.from_user
+            %br/
+            %p
+              = comment.body
+            %p
+      %strong Add a Comment
+      = render 'comments/form'
