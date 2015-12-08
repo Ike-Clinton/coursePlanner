@@ -7,57 +7,65 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %nav
-    #wrapper
-      #header
-        %h1 The Citadel Student Course Planner - CSCI Edition
-      #nav
-      %nav.navbar.navbar-default{:role => "navigation"}
-        .container-fluid
-          .navbar-header
-            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{:href => "#"} Welcome!
-          / Collect the nav links, forms, and other content for toggling
-          #bs-example-navbar-collapse-1.collapse.navbar-collapse
-            %ul.nav.navbar-nav
-              %li.active
-                %a{:href => "index"}
-                  Home
-                  %span.sr-only (current)
-              %li.active
-                %a{:href => "register_user"}
-                  Register
-                  %span.sr-only (current)    
-              %li.active
-                %a{:href => "login"}
-                  Login
-                  %span.sr-only (current)    
-              %li.active
-                %a{:href => "student"}
-                  Student
-                  %span.sr-only (current)
-              %li.active
-                %a{:href => "advisor"}
-                  Advisor
-                  %span.sr-only (current)
-              %li.active
-                %a{:href => "comments"}
-                  Comments
-                  %span.sr-only (current)
-              %li.active
-                %a{:href => "logout"}
-                  Logout
-                  %span.sr-only (current)
-        #main
-        - if flash[:notice]
-          #notice.message= flash[:notice]
-        - elsif flash[:warning]
-          #warning.message= flash[:warning]
-          
+    
+  .container-fluid
+    .row  
+      .col-md-6.col-md-offset-3  
+        %nav
+          #wrapper
+            #header
+              %h1 
+                %strong The Citadel Student Course Planner
+    .container-fluid
+      .row  
+        .col-md-6.col-md-offset-3
+          #nav
+          %nav.navbar.navbar-default{:role => "navigation"}
+            .container-fluid
+              .navbar-header
+                %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+                  %span.sr-only Toggle navigation
+                  %span.icon-bar
+                  %span.icon-bar
+                  %span.icon-bar
+                %a.navbar-brand{:href => "#"} Welcome!
+              / Collect the nav links, forms, and other content for toggling
+              #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                %ul.nav.navbar-nav
+                  %li.active
+                    %a{:href => "index"}
+                      Home
+                      %span.sr-only (current)
+                  %li.active
+                    %a{:href => "register_user"}
+                      Register
+                      %span.sr-only (current)    
+                  %li.active
+                    %a{:href => "login"}
+                      Login
+                      %span.sr-only (current)    
+                  %li.active
+                    %a{:href => "student"}
+                      Student
+                      %span.sr-only (current)
+                  %li.active
+                    %a{:href => "advisor"}
+                      Advisor
+                      %span.sr-only (current)
+                  %li.active
+                    %a{:href => "comments"}
+                      Comments
+                      %span.sr-only (current)
+                  %li.active
+                    %a{:href => "logout"}
+                      Logout
+                      %span.sr-only (current)
+            #main
+            - if flash[:notice]
+              #notice.message= flash[:notice]
+            - elsif flash[:warning]
+              #warning.message= flash[:warning]
+              
   %body
     = yield
         
