@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   # TODO: Clean up some pieces of code that aren't necessary
   #Necessary for accessing parameters in the view, etc  
   def courses_params
-    params.require(:user).permit(:email, :name, :academic_class, :is_advisor)
+    params.require(:user).permit(:email, :name)
   end  
   def class_history_params
     params.require(:classes).permit(:class_name, :crn)
@@ -22,8 +22,10 @@ class CoursesController < ApplicationController
       flash[:warning] = "User already exists!"
       redirect_to "/register_user" and return
     end
+    academic_class = "Deprecated"
+    is_advisor = "false"
     # Otherwise, create the user in the DB
-    @user = User.create!(courses_params)
+    @user = User.create!(email: params[:user][:email], name: params[:user][:name], academic_class: academic_class, is_advisor: is_advisor)
     # Log them in since they have an account
     # TODO Add code to handle case where user creates account
     # but does not register for classes

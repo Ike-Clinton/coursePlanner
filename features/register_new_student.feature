@@ -15,8 +15,6 @@ Scenario: Registering as a new student to record classes
   Given I am on the Course Planner User Registration page
   When I fill in "user_email" with "tom@citadel.edu"
   When I fill in "user_name" with "Ike"
-  When I fill in "user_academic_class" with "1a"
-  When I fill in "user_is_advisor" with "false"
   And I press Submit
   Then I should be on the Course Planner Class Registration page
   When I check "classes[c1][]"
@@ -55,8 +53,6 @@ Scenario: Attempt to register a user that already exists
   Given I am on the Course Planner User Registration page
   When I fill in "user_email" with "ikeclinton@gmail.com"
   When I fill in "user_name" with "Ike Clinton"
-  When I fill in "user_academic_class" with "1a"
-  When I fill in "user_is_advisor" with "false"
   And I press Submit
   Then I should be on the Course Planner User Registration page
   And I should see "User already exists!"
@@ -65,8 +61,6 @@ Scenario: Attempt to sign up for a class that student meets pre_reqs for (happy 
   Given I am on the Course Planner User Registration page
   When I fill in "user_email" with "tom@citadel.edu"
   When I fill in "user_name" with "Tom"
-  When I fill in "user_academic_class" with "1a"
-  When I fill in "user_is_advisor" with "false"
   And I press Submit
   Then I should be on the Course Planner Class Registration page
   When I check "classes[c2][]"
@@ -82,8 +76,6 @@ Scenario: Attempt to sign up for a class that student doesn't meet pre_reqs for 
   Given I am on the Course Planner User Registration page
   When I fill in "user_email" with "tom@citadel.edu"
   When I fill in "user_name" with "Tom"
-  When I fill in "user_academic_class" with "1a"
-  When I fill in "user_is_advisor" with "false"
   And I press Submit
   Then I should be on the Course Planner Class Registration page
   When I check "classes[c29][]"
