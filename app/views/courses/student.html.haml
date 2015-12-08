@@ -12,11 +12,13 @@ Here are the classes you have taken
     %tr
       %th Class    
       %th Class Number
+      %th Pre-Requisites
   %tbody
     - @classes_taken.each do |classItem|
       %tr
         %td= classItem.class_name
         %td= classItem.crn
+        %td= classItem.pre_reqs
 %p
 And these are the classes you need to take to graduate:
 
@@ -25,11 +27,13 @@ And these are the classes you need to take to graduate:
     %tr
       %th Class    
       %th Class Number
+      %th Pre-Requisites
   %tbody
     - @classes_required.each do |classItem|
       %tr
         %td= classItem.class_name
         %td= classItem.crn
+        %td= classItem.pre_reqs
         
 %p
   %h1 Comments
