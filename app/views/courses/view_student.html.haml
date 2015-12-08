@@ -1,17 +1,18 @@
 .container-fluid
   .row
-    .col-lg-12.col-md-offset-1
+    .col-lg-12.col-md-offset-3
       #content
       %h1 The Student View Page
       %p
       
-      
-      %p
-      %strong Here are the classes #{@name} has taken:
-      
+            
       %p
       If you would like to add more classes to this student's plan, please click
       = link_to 'Here', '/advisor_add_classes?user=' << @my_student.email
+      
+      %p
+      %strong Here are the classes #{@name} has taken:
+
       
       .container-fluid
         .row

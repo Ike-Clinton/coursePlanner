@@ -2,16 +2,14 @@
   .row
     .col-md-12.col-md-offset-1
       %h1 The Register Page
-      %p
-      Register for some classes Yo
-      %p
-      This is the class registration page.
       #content
       
       -# TODO Change CRN to class number or something else. These aren't CRNs
       -# TODO Display textboxes dynamically on page with a loop or something
       
-      Welcome User, please select the courses you have taken
+      %strong Welcome #{current_user.name}
+      %p
+      Please select the courses you have taken
       .container-fluid
         .row
           .col-lg-6
